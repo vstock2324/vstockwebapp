@@ -3,7 +3,6 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ThemeConfig } from "flowbite-react";
 import { ThemeModeScript } from "flowbite-react";
-import { LoggedInAdminContextProvider } from "@/context/useLoggedInAdmin";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,12 +26,10 @@ export default function RootLayout({
         <head>
           <ThemeModeScript />
         </head>
-        <LoggedInAdminContextProvider>
         <body className={`${poppins.variable}  antialiased`}>
-          <ThemeConfig dark={true} />
+          <ThemeConfig dark={false} />
             {children}
         </body>
-        </LoggedInAdminContextProvider>      
     </html>
   );
 }

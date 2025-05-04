@@ -133,35 +133,29 @@ export async function handleChangeVectorJPEGFile(
 ) {
   const supabase = await createClient();
   const vectorjpegfile = formData.get("vectorjpegfile") as File;
-  const { data: jpegFilePath, error: jpegFileError } = await supabase
+  const { error } = await supabase
     .from("vector_jpeg_file")
-    .select("jpeg_path")
+    .delete()
     .eq("vector_id", vectorId);
-  if (jpegFileError) throw new Error(jpegFileError.message);
+  if (error) throw new Error(error.message);
   else {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { data: deletedJPEG, error: deletedJPEGError } =
+    const { data: uploadedJPEG, error: uploadedJPEGError } =
       await supabase.storage
         .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-        .remove([jpegFilePath[0].jpeg_path]);
-    if (deletedJPEGError) throw new Error(deletedJPEGError.message);
+        .upload(
+          `admin_vectors/jpeg/${
+            vectorjpegfile.name.split(".")[0]
+          }_${Date.now()}.${vectorjpegfile.name.split(".")[1]}`,
+          vectorjpegfile,
+          {
+            cacheControl: "3600",
+            upsert: false,
+          }
+        );
+    if (uploadedJPEGError) throw new Error(uploadedJPEGError.message);
     else {
-      const { data: uploadedJPEG, error: uploadedJPEGError } =
-        await supabase.storage
-          .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-          .upload(
-            `admin_vectors/jpeg/${
-              vectorjpegfile.name.split(".")[0]
-            }_${Date.now()}.${vectorjpegfile.name.split(".")[1]}`,
-            vectorjpegfile,
-            {
-              cacheControl: "3600",
-              upsert: false,
-            }
-          );
-      if (uploadedJPEGError) throw new Error(uploadedJPEGError.message);
-      else {
-        const { data: insertedJPEG, error: insertedJPEGError } = await supabase
+      const { data: insertedJPEGData, error: insertedJPEGDataError } =
+        await supabase
           .from("vector_jpeg_file")
           .insert([
             {
@@ -171,10 +165,9 @@ export async function handleChangeVectorJPEGFile(
             },
           ])
           .select();
-        if (insertedJPEGError) throw new Error(insertedJPEGError.message);
-        else {
-          console.log(insertedJPEG);
-        }
+      if (insertedJPEGDataError) throw new Error(insertedJPEGDataError.message);
+      else {
+        console.log(insertedJPEGData);
       }
     }
   }
@@ -186,34 +179,29 @@ export async function handleChangeVectorSVGFile(
 ) {
   const supabase = await createClient();
   const vectorsvgfile = formData.get("vectorsvgfile") as File;
-  const { data: svgFilePath, error: svgFileError } = await supabase
+  const { error } = await supabase
     .from("vector_svg_file")
-    .select("svg_path")
+    .delete()
     .eq("vector_id", vectorId);
-  if (svgFileError) throw new Error(svgFileError.message);
+  if (error) throw new Error(error.message);
   else {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { data: deletedSVG, error: deletedSVGError } = await supabase.storage
-      .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-      .remove([svgFilePath[0].svg_path]);
-    if (deletedSVGError) throw new Error(deletedSVGError.message);
+    const { data: uploadedSVG, error: uploadedSVGError } =
+      await supabase.storage
+        .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
+        .upload(
+          `admin_vectors/svg/${
+            vectorsvgfile.name.split(".")[0]
+          }_${Date.now()}.${vectorsvgfile.name.split(".")[1]}`,
+          vectorsvgfile,
+          {
+            cacheControl: "3600",
+            upsert: false,
+          }
+        );
+    if (uploadedSVGError) throw new Error(uploadedSVGError.message);
     else {
-      const { data: uploadedSVG, error: uploadedSVGError } =
-        await supabase.storage
-          .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-          .upload(
-            `admin_vectors/svg/${
-              vectorsvgfile.name.split(".")[0]
-            }_${Date.now()}.${vectorsvgfile.name.split(".")[1]}`,
-            vectorsvgfile,
-            {
-              cacheControl: "3600",
-              upsert: false,
-            }
-          );
-      if (uploadedSVGError) throw new Error(uploadedSVGError.message);
-      else {
-        const { data: insertedSVG, error: insertedSVGError } = await supabase
+      const { data: insertedSVGData, error: insertedSVGDataError } =
+        await supabase
           .from("vector_svg_file")
           .insert([
             {
@@ -223,10 +211,9 @@ export async function handleChangeVectorSVGFile(
             },
           ])
           .select();
-        if (insertedSVGError) throw new Error(insertedSVGError.message);
-        else {
-          console.log(insertedSVG);
-        }
+      if (insertedSVGDataError) throw new Error(insertedSVGDataError.message);
+      else {
+        console.log(insertedSVGData);
       }
     }
   }
@@ -238,34 +225,29 @@ export async function handleChangeVectorAIFile(
 ) {
   const supabase = await createClient();
   const vectoraifile = formData.get("vectoraifile") as File;
-  const { data: aiFilePath, error: aiFileError } = await supabase
+  const { error } = await supabase
     .from("vector_ai_file")
-    .select("ai_path")
+    .delete()
     .eq("vector_id", vectorId);
-  if (aiFileError) throw new Error(aiFileError.message);
+  if (error) throw new Error(error.message);
   else {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { data: deletedAI, error: deletedAIError } = await supabase.storage
-      .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-      .remove([aiFilePath[0].ai_path]);
-    if (deletedAIError) throw new Error(deletedAIError.message);
+    const { data: uploadedAI, error: uploadedAIError } =
+      await supabase.storage
+        .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
+        .upload(
+          `admin_vectors/ai/${
+            vectoraifile.name.split(".")[0]
+          }_${Date.now()}.${vectoraifile.name.split(".")[1]}`,
+          vectoraifile,
+          {
+            cacheControl: "3600",
+            upsert: false,
+          }
+        );
+    if (uploadedAIError) throw new Error(uploadedAIError.message);
     else {
-      const { data: uploadedAI, error: uploadedAIError } =
-        await supabase.storage
-          .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME!}`)
-          .upload(
-            `admin_vectors/svg/${
-              vectoraifile.name.split(".")[0]
-            }_${Date.now()}.${vectoraifile.name.split(".")[1]}`,
-            vectoraifile,
-            {
-              cacheControl: "3600",
-              upsert: false,
-            }
-          );
-      if (uploadedAIError) throw new Error(uploadedAIError.message);
-      else {
-        const { data: insertedAI, error: insertedAIError } = await supabase
+      const { data: insertedAIData, error: insertedAIDataError } =
+        await supabase
           .from("vector_ai_file")
           .insert([
             {
@@ -275,10 +257,9 @@ export async function handleChangeVectorAIFile(
             },
           ])
           .select();
-        if (insertedAIError) throw new Error(insertedAIError.message);
-        else {
-          console.log(insertedAI);
-        }
+      if (insertedAIDataError) throw new Error(insertedAIDataError.message);
+      else {
+        console.log(insertedAIData);
       }
     }
   }

@@ -1,36 +1,43 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
-import { createClient } from "../utils/supabase/client";
+import { createContext, useContext, useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-
+import supabase from "@/utils/supabase/supabaseBrowserClient";
 const VectorsDataContext = createContext();
 
 export const VectorsDataContextProvider = ({ children }) => {
   const [vectors, setVectors] = useState([]);
   const searchParams = useSearchParams();
-  const [totalPages, setTotalPages] = useState(
-    Number(searchParams.get("page"))
-  );
-  const newLimit = 5;
-  const newOffSet = (Number(searchParams.get("page")) - 1) * newLimit;
-  const supabase = createClient();
+  const [totalPages, setTotalPages] = useState(1);
+  const pageLimit = 5;
+
   async function getVectorsData() {
-    const { data, error } = await supabase.storage
-      .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME}`)
-      .list(`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_VECTORS_FOLDER}`, {
-        limit: newLimit,
-        offset: newOffSet,
-      });
-    if (error) throw new Error(error.message);
-    setVectors(data);
+    try {
+      const page = Number(searchParams.get("page") ?? 1);
+      const { data, error } = await supabase
+        .from("vector_files_view")
+        .select("*")
+        .order("name", { ascending: true })
+        .range((page - 1) * pageLimit, page * pageLimit - 1);
+      if (error) throw new Error(error.message);
+      setVectors(data);
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   }
 
   async function getTotalPages() {
-    const { data, error } = await supabase.storage
-      .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME}`)
-      .list(`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_VECTORS_FOLDER}`);
-    if (error) throw new Error(error.message);
-    setTotalPages(Math.ceil(data.length / newLimit));
+    try {
+      const { data, error } = await supabase
+        .from("vector_files_view")
+        .select("*");
+      if (error) throw new Error(error.message);
+      else {
+        setTotalPages(Math.ceil(data.length / pageLimit));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {

@@ -12,7 +12,7 @@ export const LoggedInUserContextProvider = ({ children }) => {
     const {data: {session}}=await supabase.auth.getSession();
     if (user && session)  {
       const decodedToken = jwtDecode(session?.access_token);
-      console.log("Decoded Token",decodedToken);
+      // console.log("Decoded Token",decodedToken);
       if (decodedToken.user_role !== "admin") {
         setLoggedInUser(user);
       } else {

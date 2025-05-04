@@ -4,19 +4,21 @@ import { createClient } from "@/utils/supabase/client";
 
 const AdminVectorsContext = createContext();
 
-export const  AdminVectorsContextProvider = ({ children }) => {
+export const AdminVectorsContextProvider = ({ children }) => {
   const [vectors, setVectors] = useState([]);
   const [numVectorsPages, setNumVectorsPages] = useState(1);
   const supabase = createClient();
   const newlimit = 10;
   async function getTotalVectorsPages() {
-    const { data, error } = await supabase.from('vector_files_view').select("*");
+    const { data, error } = await supabase
+      .from("vector_details_jpeg_view")
+      .select("*");
     if (error) throw new Error(error.message);
     setNumVectorsPages(Math.ceil(data.length / newlimit));
   }
   async function getVectors() {
     const { data, error } = await supabase
-    .from('vector_files_view')
+      .from("vector_details_jpeg_view")
       .select("*")
       .range(0, newlimit - 1);
     if (error) throw new Error(error.message);
