@@ -45,17 +45,17 @@ const UsersTable = async () => {
                   className="bg-white dark:border-gray-700 dark:bg-gray-800"
                 >
                   <TableCell>
-                    {user.user_metadata["avatar_url"] ? (
+                    
                       <Image
                         className="rounded-full"
-                        src={user.user_metadata["avatar_url"]}
+                        src={user.user_metadata["avatar_url"] ?? "/images/admin.png"}
                         alt=""
                         width={30}
                         height={30}
                       />
-                    ) : null}
+                    
                   </TableCell>
-                  <TableCell>{user.user_metadata["full_name"]}</TableCell>
+                  <TableCell>{user.user_metadata["full_name"] ?? "Admin"}</TableCell>
                   <TableCell className="whitespace-wrap font-medium text-gray-900 dark:text-white">
                     {user.id}
                   </TableCell>

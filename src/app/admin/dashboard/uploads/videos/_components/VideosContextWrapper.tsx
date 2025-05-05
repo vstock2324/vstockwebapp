@@ -1,4 +1,5 @@
-import React, { memo } from 'react'
+"use client";
+import React, { memo } from 'react';
 import VideosTable from "./VideosTable";
 import {AdminVideosContextProvider} from "@/context/useAdminVideos";
 const VideosContextWrapper=()=>{

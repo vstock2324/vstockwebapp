@@ -26,7 +26,7 @@ const TemplatesList = () => {
             <Link
               className="text-black  font-normal text-[16px] cursor-pointer hover:underline hover:font-bold hover:transition-all  duration-100"
               key={item.id}
-              href={`/pages/home/vectors/category/${item.name}?page=${searchParams.get("page") || 1}`}
+              href={`/pages/home/vectors/category/${item.name}?page=1`}
             >
               {item.name}
             </Link>

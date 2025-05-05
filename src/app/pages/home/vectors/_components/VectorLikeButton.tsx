@@ -4,14 +4,13 @@ import useLoggedInUser from "@/context/useLoggedInUser";
 import useVectorModal from "@/context/useVectorModal";
 import supabase from "@/utils/supabase/supabaseBrowserClient";
 import { useRouter } from "next/navigation";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
 
 
 
 const VectorLikeButton = () => {
-  const [like, setLike] = useState<boolean>(false);
-  const { selectedVector } = useVectorModal();
+  const {like, setLike, selectedVector } = useVectorModal();
   const { loggedInUser } = useLoggedInUser();
   const { loggedInAdmin } = useLoggedInAdmin();
   const router=useRouter();
@@ -20,24 +19,30 @@ const VectorLikeButton = () => {
       setLike(false);
       return;
     } else if (loggedInUser && !loggedInAdmin) {
-      const { data, error } = await supabase
+      const { count, error } = await supabase
         .from("user_liked_vector")
-        .select("*")
+        .select("*",{count:"exact"})
         .eq("user_id", loggedInUser.id)
         .eq("vector_id", selectedVector.vector_id);
       if (error) throw new Error(error.message);
-      if (data.length === 1) {
+      if (count === 1) {
         setLike(true);
       }
+      else if(count === 0){
+        setLike(false);
+      }
     } else if (!loggedInUser && loggedInAdmin) {
-      const { data, error } = await supabase
+      const { count, error } = await supabase
         .from("user_liked_vector")
-        .select("*")
+        .select("*",{count:"exact"})
         .eq("user_id", loggedInAdmin.id)
         .eq("vector_id", selectedVector.vector_id);
       if (error) throw new Error(error.message);
-      if (data.length === 1) {
+      if (count === 1) {
         setLike(true);
+      }
+      else if(count === 0){
+        setLike(false);
       }
     }
   }
@@ -46,13 +51,13 @@ const VectorLikeButton = () => {
     if (!loggedInUser && !loggedInAdmin) {
       router.push("/pages/login");
     } else if (loggedInUser && !loggedInAdmin) {
-      const { data, error } = await supabase
+      const { count:userCount, error } = await supabase
         .from("user_liked_vector")
-        .select("*")
+        .select("*",{count:"exact"})
         .eq("user_id", loggedInUser.id)
         .eq("vector_id", selectedVector.vector_id);
       if (error) throw new Error(error.message);
-      if (data.length === 1) {
+      if (userCount === 1) {
         const { error } = await supabase
           .from("user_liked_vector")
           .delete()
@@ -60,7 +65,7 @@ const VectorLikeButton = () => {
           .eq("vector_id", selectedVector.vector_id);
         if (error) throw new Error(error.message);
         setLike(false);
-      } else if (data.length === 0) {
+      } else if (userCount === 0) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { data, error } = await supabase
           .from("user_liked_vector")
@@ -70,34 +75,39 @@ const VectorLikeButton = () => {
         setLike(true);
       }
     } else if (!loggedInUser && loggedInAdmin) {
-      const { data, error } = await supabase
+      const { count:adminCount, error } = await supabase
         .from("user_liked_vector")
-        .select("*")
+        .select("*",{count:"exact"})
         .eq("user_id", loggedInAdmin.id)
         .eq("vector_id", selectedVector.vector_id);
       if (error) throw new Error(error.message);
-      if (data.length === 1) {
+      if (adminCount === 1) {
         const { error } = await supabase
           .from("user_liked_vector")
           .delete()
           .eq("user_id", loggedInAdmin.id)
           .eq("vector_id", selectedVector.vector_id);
         if (error) throw new Error(error.message);
-        setLike(false);
-      } else if (data.length === 0) {
+        {setLike(false);
+        }
+      } else if (adminCount === 0) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { data, error } = await supabase
           .from("user_liked_vector")
           .insert({ user_id: loggedInAdmin.id, vector_id: selectedVector.vector_id })
           .select();
         if (error) throw new Error(error.message);
-        setLike(true);
+        else{
+          setLike(true);
+        }
       }
     }
   }
   useEffect(() => {
+    console.log(" I am cheking like status");
     handleCheckLikeStatus();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedVector]);
 
   return (
     <button

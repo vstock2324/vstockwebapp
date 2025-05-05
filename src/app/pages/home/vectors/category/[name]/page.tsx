@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import MainNestedLayout from "../../../_components/MainNestedLayout";
 import Tabs from "../../../_components/Tabs";
 import VectorContextsWrapper from "../../_components/VectorContextsWrapper";
@@ -10,10 +11,14 @@ export default async function VectorsCategoryNamePage({
     params: Params
     searchParams: SearchParams
   }){
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {name}=await params;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { page } = await searchParams;
+if(name===undefined || null || "") redirect("/pages/home/vectors?page=1");
+    else if(name!== undefined || null || "") {
+        if(page===undefined|| null || ""){
+          redirect(`/pages/home/vectors/category/${decodeURIComponent(name)}?page=1`);
+        }
+    }
   return (
     <>
       <MainNestedLayout>

@@ -7,10 +7,10 @@ const VectorGridDataWrapper = () => {
   const { openVectorFilter } = useVectorFilter();
   return (
     <div
-      className={`grid grid-cols-2 w-full p-1 grid-flow-dense  place-items-center justify-evenly auto-rows-max  items-center gap-4 ${
+      className={`grid grid-cols-2 w-full p-1 grid-flow-dense  gap-1 object-cover place-items-center  auto-cols-max auto-rows-max  items-center  ${
         openVectorFilter === true
           ? "md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-          : "md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+          : "md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7"
       }`}
     >
       <VectorsData />

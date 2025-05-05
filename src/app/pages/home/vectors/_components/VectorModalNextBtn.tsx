@@ -3,6 +3,7 @@ import useVectorsData from "@/context/useVectorsData";
 import useVectorModal from "@/context/useVectorModal";
 import React, { memo } from "react";
 import { FaChevronRight } from "react-icons/fa";
+
 const VectorModalNextBtn = () => {
   const {vectors}=useVectorsData();
   const {selectedVector,setSelectedVector}=useVectorModal();

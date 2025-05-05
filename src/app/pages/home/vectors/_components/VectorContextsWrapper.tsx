@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { VectorFilterContextProvider } from "@/context/useVectorFilter";
 import CombineFilters from "./CombineFilters";
 import VectorsGrid from "./VectorsGrid";
-import PaginateVectorGrid from "./PaginateVectorGrid";
+// import PaginateVectorGrid from "./PaginateVectorGrid";
 import { VectorsDataContextProvider } from "@/context/useVectorsData";
 import { VectorModalContextProvider } from "@/context/useVectorModal";
 import { LoggedInUserContextProvider } from "@/context/useLoggedInUser";
@@ -19,7 +19,7 @@ const VectorContextsWrapper = () => {
           <VectorFilterContextProvider>
           <CombineFilters />
           <VectorsGrid />
-          <PaginateVectorGrid />
+          {/* <PaginateVectorGrid /> */}
           <VectorsPagination/>
           </VectorFilterContextProvider>
           </VectorModalContextProvider>

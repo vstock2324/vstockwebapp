@@ -20,6 +20,7 @@ export const VectorModalContextProvider = ({ children }) => {
   const [sizeVectorModal, setSizeVectorModal] = useState("6xl");
   const [selectedVector, setSelectedVector] = useState({});
   const [selectedVectorUrl, setSelectedVectorUrl] = useState();
+  const [like, setLike] = useState(false);
 
   function handleVectorModalSize() {
     if (typeof window !== "undefined") {
@@ -61,6 +62,7 @@ if(selectedVector!={}){
   useEffect(()=>{
      if(openVectorModal===false){
       setSelectedVector({});
+      setLike(false);
     }
   },[openVectorModal])
 
@@ -72,6 +74,8 @@ if(selectedVector!={}){
     sizeVectorModal,
     selectedVector,
     setSelectedVector,
+    like,
+    setLike
   };
 
   return (

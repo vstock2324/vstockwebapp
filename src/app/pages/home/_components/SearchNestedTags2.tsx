@@ -1,20 +1,30 @@
 import { Fragment, memo } from "react";
-import { nanoid } from "nanoid";
 import { createClient } from "@/utils/supabase/server";
+import Link from "next/link";
+import { nanoid } from "nanoid";
 
 const SearchNestedTags2 = async () => {
   const supabase = await createClient();
-  let { data, error } = await supabase.from("tags").select("*").range(0, 4);
+  const {count,error:countError}=await supabase.from("tags").select("*",{count:"exact"});
+  let startIndex=0;
+  if(countError) throw new Error(countError.message);
+  if(count!==null){
+  startIndex=Math.floor(Math.random()*count);
+  if(startIndex>count-4){
+       startIndex=count-4;
+  }
+}
+  const { data, error } = await supabase.from("tags").select("*").range(startIndex, startIndex+4 );
   if (error) throw new Error(error.message);
 
   return (
     <>
-      <div className="hidden lg:pb-10">
-        <div className="lg:flex lg:flex-row items-center justify-center  gap-x-[18px]">
+      <div className="hidden lg:flex lg:pb-10">
+        <div className="flex flex-row items-center justify-center  gap-x-[18px]">
           {data.map((item) => {
             return (
-              <Fragment key={nanoid()}>
-                <button className=" px-3 py-2 inline-flex flex-row items-center  justify-around rounded-[75.2px] bg-mycolor2 text-white border-white bg-[#3D72DF]  cursor-pointer  border-solid gap-x-2">
+              <Fragment key={nanoid().toString()}>
+                <Link href={"/"} className=" px-3 py-2 inline-flex flex-row items-center  justify-around rounded-[75.2px] bg-mycolor2 text-white border-white bg-[#3D72DF]  cursor-pointer  border-solid gap-x-2">
                   <h3 className="text-[12px]  font-poppins text-nowrap ">
                     {item.name}
                   </h3>
@@ -42,7 +52,7 @@ const SearchNestedTags2 = async () => {
                       />
                     </svg>
                   </span>
-                </button>
+                </Link>
               </Fragment>
             );
           })}
@@ -50,6 +60,7 @@ const SearchNestedTags2 = async () => {
       </div>
     </>
   );
-};
+}
 
-export default memo(SearchNestedTags2);
+
+export default memo(SearchNestedTags2)

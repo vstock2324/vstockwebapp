@@ -1,3 +1,4 @@
+"use client";
 import { TableCell } from "flowbite-react";
 import { MdEdit } from "react-icons/md";
 import Link from "next/link";

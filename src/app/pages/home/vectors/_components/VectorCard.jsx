@@ -3,7 +3,7 @@ import { memo, } from "react";
 import Image from "next/image";
 import { createClient } from "../../../../../utils/supabase/client";
 
-import useVectorModal from "@/context/useVectorModal";
+import useVectorModal from "../../../../../context/useVectorModal";
 
 const VectorCard = ({ card }) => {
   
@@ -24,11 +24,10 @@ const VectorCard = ({ card }) => {
     
       <button
         onClick={handleVectorCardClick}
-        className="flex-shrink flex flex-col items-center justify-start  border hover:border-gray-200  hover:shadow-xl rounded mx-auto"
+        className="flex-shrink flex flex-col items-center  col-span-1 justify-center  border hover:border-gray-200  hover:shadow-xl rounded mx-auto"
       >
-        
         <Image
-          className="rounded object-fill cursor-pointer w-auto h-auto"
+          className="rounded cursor-pointer"
           loading="lazy"
           alt=""
           src={data.publicUrl}
