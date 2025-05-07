@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import TemplatesListItem from "./TemplatesListItem";
 import NavBarLoginButton2 from "./NavBarLoginButton2";
-import NavBar2ProjectsLink from "./NavBar2ProjectsLink";
+import NavBar2ProjectsLinkContextWrapper from "./NavBar2ProjectsLinkContextWrapper";
+
 
 const NavBar2 = () => {
   return (
@@ -25,7 +26,7 @@ const NavBar2 = () => {
             <Link href={"/pages/home"}>Home</Link>
           </li>
           <TemplatesListItem />
-          <NavBar2ProjectsLink />
+          <NavBar2ProjectsLinkContextWrapper/>          
           <li>
             <Link href={"/pages/premium"}>Premium</Link>
           </li>
