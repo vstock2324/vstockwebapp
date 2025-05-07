@@ -6,11 +6,12 @@ import { BiLoaderCircle } from "react-icons/bi";
 import { useDebouncedCallback } from "use-debounce";
 import React from "react";
 import { nanoid } from "nanoid";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import { PiMagnifyingGlass } from "react-icons/pi";
 
 const HomeSearchInput = () => {
   const supabase = createClient();
-  const [items, setItems] = useState([]);
-  const [val, setVal] = useState("");
+  const [items, setItems] = useState<unknown[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = useDebouncedCallback(async (event) => {
@@ -66,17 +67,22 @@ const HomeSearchInput = () => {
         )}
         {items.length > 0 ? (
           <div className="absolute bg-white w-[90%] border-t-0 border-b  border-l border-r h-auto  z-30  top-12 rounded-b-2xl  max-h-[200px]  overflow-y-auto overscroll-y-auto overflow-x-hidden   m-1 p-1">
-            {items.map((item) => {
+            
+            {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            items.map((item:any) => {
               {
                 return (
-                  <div className="p-1" key={nanoid()}>
-                    <Link
-                      href={`/pages/home/vectors?id=${item.vector_id}`}
-                      className="flex items-center justify-between w-full cursor-pointer hover:bg-gray-200 p-1 px-2"
-                    >
-                      <span className="text-black">{item.name}</span>
-                    </Link>
-                  </div>
+                             <div className="p-1 flex flex-row items-center justify-between hover:bg-gray-200 " key={nanoid().toString()}>
+                               <Link
+                                 href={`/pages/home/vectors?id=${item.vector_id}`}
+                                 className="flex flex-row visited:text-gray-600 items-center justify-start space-x-1 w-full cursor-pointer py-1 px-2"
+                               >
+                                 <PiMagnifyingGlass size={14} />
+                                 <span className="text-black text-center text-[14px]">{item.name}</span>
+                               </Link>
+                               <MdOutlineArrowOutward  size={14}/>
+                             </div>
                 );
               }
             })}

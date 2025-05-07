@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TemplatesListItem from "./TemplatesListItem";
 import NavBarLoginButton2 from "./NavBarLoginButton2";
+import NavBar2ProjectsLink from "./NavBar2ProjectsLink";
 
 const NavBar2 = () => {
   return (
@@ -24,13 +25,11 @@ const NavBar2 = () => {
             <Link href={"/pages/home"}>Home</Link>
           </li>
           <TemplatesListItem />
-          <li>
-            <Link href={"/pages/projects"}>My Projects</Link>
-          </li>
+          <NavBar2ProjectsLink />
           <li>
             <Link href={"/pages/premium"}>Premium</Link>
           </li>
-           <NavBarLoginButton2/>
+          <NavBarLoginButton2 />
         </ul>
       </nav>
     </div>

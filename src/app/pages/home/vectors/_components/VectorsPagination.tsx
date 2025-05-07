@@ -17,9 +17,7 @@ const VectorsPagination = () => {
   const pathname = usePathname();
   const currentPage = Number(searchParams.get("page") ?? 1);
   const { totalPages } = useVectorsData();
-
-
-
+  
   return (
     <>
       <div className="py-10">

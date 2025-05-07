@@ -10,6 +10,7 @@
     "postinstall": "flowbite-react patch"
   },
   "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.13",
     "@radix-ui/react-slot": "^1.2.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",

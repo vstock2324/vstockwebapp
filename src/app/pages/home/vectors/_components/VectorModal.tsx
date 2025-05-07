@@ -34,7 +34,7 @@ return (
         size={sizeVectorModal}
         onClose={() => setOpenVectorModal(false)}
         position={"center"}
-        className="h-[95vh]"
+        className="h-screen"
       >
         <VectorModalPreviousBtn />
         <VectorModalCloseButton />
@@ -49,7 +49,7 @@ return (
                     src={selectedVectorUrl}
                   />
                 </Link>
-                <div className="absolute inline-block -translate-x-[10%] -translate-y-[15%] top-[15%] right-[10%] items-center justify-center space-y-1 lg:hidden">
+                <div className="absolute inline-block -translate-x-[10%] -translate-y-[15%] top-[2%] right-[1%] items-center justify-center space-y-1 lg:hidden">
                   <FaHeart fill="black" className="cursor-pointer" size={30} />
                   <PiShareFatFill
                     fill="black"

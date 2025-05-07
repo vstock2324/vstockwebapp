@@ -1,6 +1,10 @@
 import MainLayout from "./_components/MainLayout";
-export default function PremiumPage(){
-    return (<MainLayout>
-        <h1>Premium</h1>
-    </MainLayout>);
+import PremiumContextWrapper from "./_components/PremiumContextWrapper";
+
+export default function PremiumPage() {
+  return (
+    <MainLayout>
+     <PremiumContextWrapper/>
+    </MainLayout>
+  );
 }

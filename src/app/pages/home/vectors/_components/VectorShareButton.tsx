@@ -40,8 +40,8 @@ const VectorShareButton=()=> {
     }
 
   return (
-    <button onClick={handleClickShare} className="cursor-pointer p-2 flex-grow space-x-2 rounded-md  inline-flex items-center justify-center bg-[#F3F3F3]">
-    <h4 className="xl:text-lg lg:text-base text-black font-medium">
+    <button onClick={handleClickShare} className="cursor-pointer p-2 flex-grow space-x-2 rounded-md  flex flex-row items-center justify-center bg-[#F3F3F3] flex-nowrap">
+    <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap">
       Share Vector
     </h4>
     <PiShare fill={"black"} size={20} />

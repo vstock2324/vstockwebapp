@@ -104,7 +104,6 @@ const VectorLikeButton = () => {
     }
   }
   useEffect(() => {
-    console.log(" I am cheking like status");
     handleCheckLikeStatus();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedVector]);
@@ -115,7 +114,7 @@ const VectorLikeButton = () => {
       type="button"
       className=" cursor-pointer p-2 flex-grow space-x-2 rounded-md  inline-flex items-center justify-center bg-[#F3F3F3]"
     >
-      <h4 className="xl:text-lg lg:text-base text-black font-medium">
+      <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap">
         Add to Likes
       </h4>
       <FaHeart fill={like ? "red" : "black"} size={20} />

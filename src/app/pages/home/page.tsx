@@ -1,7 +1,7 @@
 import Category from "./_components/Category";
 import NewlyAdded from "./_components/NewlyAdded";
 import PromotionalViews from "./_components/PromotionalViews";
-// import ClientReview from "./_components/ClientReviews";
+import ClientReview from "./_components/ClientReviews";
 import MainHomeLayout from "./_components/MainHomeLayout";
 import EditOwn from "./_components/EditOwn";
 import RecommendedViews from "./_components/RecommendedViews";
@@ -21,7 +21,7 @@ export default function HomePage() {
       </div>
       <RecommendedViews/>
       <div className="container mx-auto bg-[#FEFAFF]">
-        {/* <ClientReview /> */}
+        <ClientReview />
       </div>
     </MainHomeLayout>
   );

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-
+"use client";
 import { memo } from "react"
 import GoldStar from "./GoldStar";
 import Image from "next/image";

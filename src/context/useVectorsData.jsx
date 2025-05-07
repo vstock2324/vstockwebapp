@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState, useRef } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import supabase from "@/utils/supabase/supabaseBrowserClient";
 const VectorsDataContext = createContext();
@@ -7,22 +7,77 @@ const VectorsDataContext = createContext();
 export const VectorsDataContextProvider = ({ children }) => {
   const [vectors, setVectors] = useState([]);
   const searchParams = useSearchParams();
+  const sp = new URLSearchParams(searchParams);
   const params = useParams();
-  const [totalPages, setTotalPages] = useState(1);
-  const pageLimit = 14;
+  const [totalPages, setTotalPages] = useState(0);
+  const pageLimit = 10;
 
   async function getVectorsData() {
     try {
       const page = Number(searchParams.get("page") ?? 1);
       if (params.name === undefined || null || "") {
-        const { data, error } = await supabase
-          .from("vector_files_view")
-          .select("*")
-          .order("name", { ascending: true })
-          .range((page - 1) * pageLimit, page * pageLimit - 1);
-        if (error) throw new Error(error.message);
-        else {
-          setVectors(data);
+        const license = searchParams.get("license") ?? undefined;
+        const orientation = searchParams.get("orientation") ?? undefined;
+        if (
+          (license === undefined || null || "") &&
+          (orientation === undefined || null || "")
+        ) {
+          const { data, error } = await supabase
+            .from("vector_files_view")
+            .select("*")
+            .order("name", { ascending: true })
+            .range((page - 1) * pageLimit, page * pageLimit - 1);
+          if (error) throw new Error(error.message);
+          else {
+            console.log(data);
+            setVectors(data);
+          }
+        } else if (
+          (license !== undefined || null || "") &&
+          (orientation === undefined || null || "")
+        ) {
+          const { data, error } = await supabase
+            .from("vector_files_view")
+            .select("*")
+            .eq("license", license)
+            .order("name", { ascending: true })
+            .range((page - 1) * pageLimit, page * pageLimit - 1);
+          if (error) throw new Error(error.message);
+          else {
+            console.log(data);
+            setVectors(data);
+          }
+        } else if (
+          (license === undefined || null || "") &&
+          (orientation !== undefined || null || "")
+        ) {
+          const { data, error } = await supabase
+            .from("vector_files_view")
+            .select("*")
+            .eq("orientation", orientation)
+            .order("name", { ascending: true })
+            .range((page - 1) * pageLimit, page * pageLimit - 1);
+          if (error) throw new Error(error.message);
+          else {
+            console.log(data);
+            setVectors(data);
+          }
+        } else if (
+          (license !== undefined || null || "") &&
+          (orientation !== undefined || null || "")
+        ) {
+          const { data, error } = await supabase
+            .from("vector_files_view")
+            .select("*")
+            .eq("license", license)
+            .eq("orientation", orientation)
+            .order("name", { ascending: true })
+            .range((page - 1) * pageLimit, page * pageLimit - 1);
+          if (error) throw new Error(error.message);
+          else {
+            console.log(data);
+            setVectors(data);
+          }
         }
       } else if (params.name !== undefined || null || "") {
         const { data: categoryData, error: categoryError } = await supabase
@@ -31,16 +86,73 @@ export const VectorsDataContextProvider = ({ children }) => {
           .eq("category_name", `${decodeURIComponent(params.name)}`);
         if (categoryError) throw new Error(categoryError.message);
         else {
+          const license = searchParams.get("license") ?? undefined;
+          const orientation = searchParams.get("orientation") ?? undefined;
           const vectorIds = categoryData.map((item) => item.vector_id);
-          const { data: filesData, error: filesError } = await supabase
-            .from("vector_files_view")
-            .select("*")
-            .in("vector_id", vectorIds)
-            .order("name", { ascending: true })
-            .range((page - 1) * pageLimit, page * pageLimit - 1);
-          if (filesError) throw new Error(filesError.message);
-          else {
-            setVectors(filesData);
+          if (
+            (license === undefined || null || "") &&
+            (orientation === undefined || null || "")
+          ) {
+            const { data: filesData, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*")
+              .in("vector_id", vectorIds)
+              .order("name", { ascending: true })
+              .range((page - 1) * pageLimit, page * pageLimit - 1);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              console.log(filesData);
+              setVectors(filesData);
+            }
+          } else if (
+            (license !== undefined || null || "") &&
+            (orientation === undefined || null || "")
+          ) {
+            const { data: filesData, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*")
+              .in("vector_id", vectorIds)
+              .eq("license", license)
+              .order("name", { ascending: true })
+              .range((page - 1) * pageLimit, page * pageLimit - 1);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              console.log(filesData);
+              setVectors(filesData);
+            }
+          } else if (
+            (license === undefined || null || "") &&
+            (orientation !== undefined || null || "")
+          ) {
+            const { data: filesData, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*")
+              .in("vector_id", vectorIds)
+              .eq("orientation", orientation)
+              .order("name", { ascending: true })
+              .range((page - 1) * pageLimit, page * pageLimit - 1);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              console.log(filesData);
+              setVectors(filesData);
+            }
+          } else if (
+            (license !== undefined || null || "") &&
+            (orientation !== undefined || null || "")
+          ) {
+            const { data: filesData, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*")
+              .in("vector_id", vectorIds)
+              .eq("license", license)
+              .eq("orientation", orientation)
+              .order("name", { ascending: true })
+              .range((page - 1) * pageLimit, page * pageLimit - 1);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              console.log(filesData);
+              setVectors(filesData);
+            }
           }
         }
       }
@@ -53,12 +165,56 @@ export const VectorsDataContextProvider = ({ children }) => {
   async function getTotalPages() {
     try {
       if (params.name === undefined || null || "") {
-        const { count, error } = await supabase
-          .from("vector_files_view")
-          .select("*", { count: "exact" });
-        if (error) throw new Error(error.message);
-        else {
-          setTotalPages(Math.ceil(Number(count) / pageLimit));
+        const license = searchParams.get("license") ?? undefined;
+        const orientation = searchParams.get("orientation") ?? undefined;
+        if (
+          (license === undefined || null || "") &&
+          (orientation === undefined || null || "")
+        ) {
+          const { count, error } = await supabase
+            .from("vector_files_view")
+            .select("*", { count: "exact" });
+          if (error) throw new Error(error.message);
+          else {
+            setTotalPages(Math.ceil(Number(count) / pageLimit));
+          }
+        } else if (
+          (license !== undefined || null || "") &&
+          (orientation === undefined || null || "")
+        ) {
+          const { count, error } = await supabase
+            .from("vector_files_view")
+            .select("*", { count: "exact" })
+            .eq("license", license);
+          if (error) throw new Error(error.message);
+          else {
+            setTotalPages(Math.ceil(Number(count) / pageLimit));
+          }
+        } else if (
+          (license === undefined || null || "") &&
+          (orientation !== undefined || null || "")
+        ) {
+          const { count, error } = await supabase
+            .from("vector_files_view")
+            .select("*", { count: "exact" })
+            .eq("orientation", orientation);
+          if (error) throw new Error(error.message);
+          else {
+            setTotalPages(Math.ceil(Number(count) / pageLimit));
+          }
+        } else if (
+          (license !== undefined || null || "") &&
+          (orientation !== undefined || null || "")
+        ) {
+          const { count, error } = await supabase
+            .from("vector_files_view")
+            .select("*", { count: "exact" })
+            .eq("license", license)
+            .eq("orientation", orientation);
+          if (error) throw new Error(error.message);
+          else {
+            setTotalPages(Math.ceil(Number(count) / pageLimit));
+          }
         }
       } else if (params.name !== undefined || null || "") {
         const { data: categoryData, error: categoryError } = await supabase
@@ -67,14 +223,61 @@ export const VectorsDataContextProvider = ({ children }) => {
           .eq("category_name", `${decodeURIComponent(params.name)}`);
         if (categoryError) throw new Error(categoryError.message);
         else {
+          const license = searchParams.get("license") ?? undefined;
+          const orientation = searchParams.get("orientation") ?? undefined;
           const vectorIds = categoryData.map((item) => item.vector_id);
-          const { count, error: filesError } = await supabase
-            .from("vector_files_view")
-            .select("*", { count: "exact" })
-            .in("vector_id", vectorIds);
-          if (filesError) throw new Error(filesError.message);
-          else {
-            setTotalPages(Math.ceil(Number(count) / pageLimit));
+          if (
+            (license === undefined || null || "") &&
+            (orientation === undefined || null || "")
+          ) {
+            const { count, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*", { count: "exact" })
+              .in("vector_id", vectorIds);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              setTotalPages(Math.ceil(Number(count) / pageLimit));
+            }
+          } else if (
+            (license !== undefined || null || "") &&
+            (orientation === undefined || null || "")
+          ) {
+            const { count, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*", { count: "exact" })
+              .in("vector_id", vectorIds)
+              .eq("license", license);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              setTotalPages(Math.ceil(Number(count) / pageLimit));
+            }
+          } else if (
+            (license === undefined || null || "") &&
+            (orientation !== undefined || null || "")
+          ) {
+            const { count, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*", { count: "exact" })
+              .in("vector_id", vectorIds)
+              .eq("orientation", orientation);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              setTotalPages(Math.ceil(Number(count) / pageLimit));
+            }
+          } else if (
+            (license !== undefined || null || "") &&
+            (orientation !== undefined || null || "")
+          ) {
+            const { count, error: filesError } = await supabase
+              .from("vector_files_view")
+              .select("*", { count: "exact" })
+              .in("vector_id", vectorIds)
+              .eq("license", license)
+              .eq("orientation", orientation);
+            if (filesError) throw new Error(filesError.message);
+            else {
+              setTotalPages(Math.ceil(Number(count) / pageLimit));
+            }
           }
         }
       }
@@ -85,8 +288,6 @@ export const VectorsDataContextProvider = ({ children }) => {
 
   useEffect(() => {
     getTotalPages();
-  }, []);
-  useEffect(() => {
     getVectorsData();
   }, [searchParams, params]);
 
