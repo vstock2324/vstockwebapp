@@ -7,6 +7,7 @@ import { FaArrowDownLong } from "react-icons/fa6";
 import useLoggedInAdmin from "@/context/useLoggedInAdmin";
 import useLoggedInUser from "@/context/useLoggedInUser";
 import { useRouter } from "next/navigation";
+import VectorJPEGDownloadLinkLoginAlert from "./VectorJPEGDownloadLinkLoginAlert";
 
 const VectorJPEGDownloadLink = () => {
   const { selectedVector } = useVectorModal();
@@ -40,14 +41,17 @@ const VectorJPEGDownloadLink = () => {
 
   return (
     <>
-      <button
+         {
+      ((loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ) ? 
+      (<button
         className={`bg-[#0BAC6F]  ${loading ? "cursor-progress":"cursor-pointer"} flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
         onClick={handleJPEGDownload}
         disabled={loading}
       >
         JPEG&nbsp;
         <FaArrowDownLong size={13} color="#FFFFFF" />
-      </button>{" "}
+      </button>):(<VectorJPEGDownloadLinkLoginAlert/>)
+    }
     </>
   );
 };

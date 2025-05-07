@@ -1,11 +1,12 @@
 "use client";
-import { memo, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { FaChevronUp } from "react-icons/fa";
 import  TemplatesList from "./TemplatesList";
 
 const TemplatesListItem =() => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const  liRef= useRef<HTMLLIElement>(null)
   function handleClose() {
     setOpen(false);
   }
@@ -13,18 +14,27 @@ const TemplatesListItem =() => {
     setOpen(true);
   }
 
+  useEffect(()=>{
+     const currentRef=liRef.current;
+     if(!currentRef) return;
+     currentRef.addEventListener("mouseover",handleOpen,{capture:false});
+     currentRef.addEventListener("mouseout",handleClose,{capture:false});
+     return ()=>{
+      currentRef.removeEventListener("mouseover",handleOpen,{capture:false});
+      currentRef.removeEventListener("mouseout",handleClose,{capture:false});
+     }
+  },[])
+
   return (
-    <li onMouseOver={handleOpen} onMouseOut={handleClose}  className="relative flex flex-row justify-between items-center space-x-2">
+    <li ref={liRef} className="relative flex flex-row justify-between items-center space-x-2">
       <span>Templates</span>
       {open ? (
         <FaChevronUp
-          // onClick={handleClose}
           className="cursor-pointer"
           size={18}
         />
       ) : (
         <FaChevronDown
-          // onClick={handleOpen}
           className="cursor-pointer"
           size={18}
         />

@@ -7,6 +7,7 @@ import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import React, { memo, useState } from "react";
 import { FaArrowDownLong } from "react-icons/fa6";
+import VectorAIDownloadLinkLoginAlert from "./VectorAIDownloadLinkLoginAlert";
 
 const VectorAIDownloadLink = () => {
   const { selectedVector } = useVectorModal();
@@ -40,7 +41,8 @@ const VectorAIDownloadLink = () => {
 
   return (
     <>
-      <button
+    {((loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ) ? 
+      (<button
         className={`bg-[#0BAC6F]  ${
           loading ? "cursor-progress" : "cursor-pointer"
         } flex flex-row items-center flex-nowrap text-nowrap justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
@@ -49,7 +51,8 @@ const VectorAIDownloadLink = () => {
       >
         AI&nbsp;
         <FaArrowDownLong size={13} color="#FFFFFF" />
-      </button>{" "}
+      </button>):(<VectorAIDownloadLinkLoginAlert/>)
+      }
     </>
   );
 };
