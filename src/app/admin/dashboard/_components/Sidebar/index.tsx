@@ -101,17 +101,17 @@ const menuGroups = [
           </svg>
         ),
         label: "Calendar",
-        route: "/admin/dashboard/calendar",
+        route: "/admin/dashboard",
       },
       {
         icon: <HiOutlineUserGroup size={24}/>,
         label: "Subscribers",
-        route: "/admin/dashboard/subscribers",
+        route: "/admin/dashboard",
       },
       {
         icon: <BsCalendarEvent size={24}/>,
         label: "Events",
-        route: "/admin/dashboard/events",
+        route: "/admin/dashboard",
       },
       // {
       //   icon: (
@@ -199,16 +199,22 @@ const menuGroups = [
         icon:<FaVectorSquare size={24}/>,
         label:"Vectors",
         route:"/admin/dashboard/vectors",
+        children: [
+          { label: "New", route: "/admin/dashboard/vectors/new" }
+        ],
       },
       {
         icon: <FaLayerGroup size={24}/>,
         label: "Categories",
         route: "/admin/dashboard/categories",
+        children: [
+          { label: "New", route: "/admin/dashboard/categories/new" }
+        ],
       },
       {
         icon: <HiTemplate size={24}/>,
         label: "Animations",
-        route: "/admin/dashboard/animations",
+        route: "/admin/dashboard",
         // children:[
         //   {label:"",route:""},
         //   {label:"",route:"/animations/edit"},
@@ -217,12 +223,15 @@ const menuGroups = [
       {
         icon:<FaPaintRoller size={24}/>,
         label:"Posters",
-        route:"/admin/dashboard/posters",
+        route:"/admin/dashboard",
       },
       {
         icon:<RiHashtag size={24}/>,
         label:"Tags",
         route:"/admin/dashboard/tags",
+        children: [
+          { label: "New", route: "/admin/dashboard/tags/new" }
+        ],
       },
     ],
   },
@@ -233,7 +242,8 @@ const menuGroups = [
       {
         icon: <TbMessages size={24}/>,
         label: "Messages",
-        route: "/admin/dashboard/messages",
+        route: "/admin/dashboard"
+        // route: "/admin/dashboard/messages",
        },
       //  {
       //   icon: <FaFileInvoice size={24}/>,
@@ -243,15 +253,16 @@ const menuGroups = [
    {
     icon: <HiOutlinePrinter size={24}/>,
     label: "Invoices",
-    route: "/admin/dashboard/invoices",
+    route: "/admin/dashboard",
+    // route: "/admin/dashboard/invoices",
    },
    {
     icon: <CgProfile size={24}/>,
     label:"Profile",
-    route:"/admin/dashboard/profile"
+    route:"/admin/dashboard"
+    // route:"/admin/dashboard/profile"
    }
-
-           ],
+  ],
   }
   // {
   //   name: "OTHERS",

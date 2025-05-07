@@ -6,6 +6,7 @@ import supabase from "@/utils/supabase/supabaseBrowserClient";
 import { useRouter } from "next/navigation";
 import React, { memo, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
+import VectorLikeButtonLoginAlert from "./VectorLikeButtonLoginAlert";
 
 
 
@@ -109,7 +110,9 @@ const VectorLikeButton = () => {
   }, [selectedVector]);
 
   return (
-    <button
+<>
+    {
+      ((loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ) ?  (<button
       onClick={handleClickLikeStatus}
       type="button"
       className=" cursor-pointer p-2 flex-grow space-x-2 rounded-md  inline-flex items-center justify-center bg-[#F3F3F3]"
@@ -118,8 +121,7 @@ const VectorLikeButton = () => {
         Add to Likes
       </h4>
       <FaHeart fill={like ? "red" : "black"} size={20} />
-    </button>
-  );
-};
-
+    </button>):(<VectorLikeButtonLoginAlert/>)
+}</>);
+}
 export default memo(VectorLikeButton);

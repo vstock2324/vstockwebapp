@@ -20,7 +20,9 @@ const NewTagsForm = () => {
     >
       <div>
         <div className="my-2 block">
-          <Label htmlFor="vectorname">Tag Name</Label>
+          <Label 
+          className=" after:ml-0.5 after:text-red-500 after:content-['*'] text-gray-400"
+          htmlFor="vectorname">Tag Name</Label>
         </div>
         <TextInput
         className="w-[80%]"
@@ -33,12 +35,14 @@ const NewTagsForm = () => {
       </div>
       <div>
         <div className="my-2 block">
-          <Label htmlFor="vectordescription">Tag Description</Label>
+          <Label 
+          className="after:ml-0.5 after:text-red-500 after:content-['*'] text-gray-400"
+          htmlFor="vectordescription">Tag Description</Label>
         </div>
         <Textarea
           id="tagdescription"
           name="tagdescription"
-          className="w-[80%]"
+          className="w-[80%] h-[120px] resize-none"
           placeholder="Enter Category Description"
           required
         />

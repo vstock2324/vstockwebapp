@@ -4,33 +4,28 @@ import useLoggedInAdmin from '@/context/useLoggedInAdmin';
 import useLoggedInUser from '@/context/useLoggedInUser';
 import useVectorModal from '@/context/useVectorModal';
 import supabase from '@/utils/supabase/supabaseBrowserClient';
-import { useRouter } from 'next/navigation';
 import { PiShare } from 'react-icons/pi';
+import VectorShareButtonLoginAlert from './VectorShareButtonLoginAlert';
 
 const VectorShareButton=()=> {
-  const router=useRouter();
+  
       const { selectedVector } = useVectorModal();
       const { loggedInUser } = useLoggedInUser();
       const { loggedInAdmin } = useLoggedInAdmin();
     async function handleClickShare() {
         try{
-          
-             if (!loggedInUser && !loggedInAdmin) {
-              console.log("clicked share button");
-              router.push("/pages/login"); 
-             }
-             else if(loggedInUser && !loggedInAdmin){
+           if(loggedInUser && !loggedInAdmin){
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const { data, error } = await supabase
                 .from("user_shared_vector")
-                .insert({"user_id":loggedInUser.id,"vector_id":selectedVector.id});
+                .insert({"user_id":loggedInUser.id,"vector_id":selectedVector.vector_id});
               if (error) throw new Error(error.message);
              }
               else if(!loggedInUser && loggedInAdmin){
                   // eslint-disable-next-line @typescript-eslint/no-unused-vars
                   const { data, error } = await supabase
                   .from("user_shared_vector")
-                  .insert({"user_id":loggedInAdmin.id,"vector_id":selectedVector.id});
+                  .insert({"user_id":loggedInAdmin.id,"vector_id":selectedVector.vector_id});
                 if (error) throw new Error(error.message);
               }
         }
@@ -40,13 +35,14 @@ const VectorShareButton=()=> {
     }
 
   return (
-    <button onClick={handleClickShare} className="cursor-pointer p-2 flex-grow space-x-2 rounded-md  flex flex-row items-center justify-center bg-[#F3F3F3] flex-nowrap">
+    <>{((loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ) ?
+    (<button onClick={handleClickShare} className="cursor-pointer p-2 flex-grow space-x-2 rounded-md  flex flex-row items-center justify-center bg-[#F3F3F3] flex-nowrap">
     <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap">
       Share Vector
     </h4>
     <PiShare fill={"black"} size={20} />
-  </button>
-  )
+  </button>):(<VectorShareButtonLoginAlert/>)
+}</>);
 }
 
 export default memo(VectorShareButton);
