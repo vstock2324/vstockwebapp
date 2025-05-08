@@ -13,19 +13,24 @@ export async function handleAdminSignupFormSubmit(
   prevState: prevStateType,
   formData: FormData
 ): Promise<prevStateType> {
-  const supabase = await createClient();
-  const adminEmail = formData.get("adminEmail") as string;
-  const adminPass = formData.get("adminPass") as string;
-  const adminPassConfirm = formData.get("adminPassConfirm") as string;
-  if (adminPass !== adminPassConfirm) {
-    throw new Error("Passwords do not match");
+  try {
+    const supabase = await createClient();
+    const adminEmail = formData.get("adminEmail") as string;
+    const adminPass = formData.get("adminPass") as string;
+    const adminPassConfirm = formData.get("adminPassConfirm") as string;
+    if (adminPass !== adminPassConfirm) {
+      throw new Error("Passwords do not match");
+    }
+    const data = {
+      email: adminEmail,
+      password: adminPass,
+    };
+    const { error } = await supabase.auth.signUp(data);
+    if (error) throw new Error(error.message);
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
-  const data = {
-    email: adminEmail,
-    password: adminPass,
-  };
-  const { error } = await supabase.auth.signUp(data);
-  if (error) throw new Error(error.message);
   revalidatePath("/", "layout");
   redirect("/admin/login");
 }

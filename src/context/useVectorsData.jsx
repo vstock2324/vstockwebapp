@@ -10,7 +10,7 @@ export const VectorsDataContextProvider = ({ children }) => {
   const sp = new URLSearchParams(searchParams);
   const params = useParams();
   const [totalPages, setTotalPages] = useState(0);
-  const pageLimit = 10;
+  const pageLimit = 15;
 
   async function getVectorsData() {
     try {
