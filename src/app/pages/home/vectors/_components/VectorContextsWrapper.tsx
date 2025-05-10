@@ -8,6 +8,7 @@ import { VectorModalContextProvider } from "@/context/useVectorModal";
 import { LoggedInUserContextProvider } from "@/context/useLoggedInUser";
 import VectorsPagination from "./VectorsPagination";
 import { LoggedInAdminContextProvider } from "@/context/useLoggedInAdmin";
+import { VectorSortByContextProvider } from "@/context/useVectorSortBy";
 
 const VectorContextsWrapper = () => {
   return (
@@ -17,10 +18,12 @@ const VectorContextsWrapper = () => {
           <VectorsDataContextProvider>
           <VectorModalContextProvider>
           <VectorFilterContextProvider>
+            <VectorSortByContextProvider>
           <CombineFilters />
           <VectorsGrid />
           {/* <PaginateVectorGrid /> */}
           <VectorsPagination/>
+          </VectorSortByContextProvider>
           </VectorFilterContextProvider>
           </VectorModalContextProvider>
           </VectorsDataContextProvider>

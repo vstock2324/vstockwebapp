@@ -21,31 +21,30 @@ import VectorURLImg from "./VectorURLImg";
 import DateTableCell from "./DateTableCell";
 import NewVectorLinkBtn from "./NewVectorLinkBtn";
 
-
 const VectorsTable = () => {
   const { vectors } = useAdminVectors();
   const supabase = createClient();
   const router = useRouter();
   async function handleDeleteClick(id: string) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { error } = await supabase
-.from('vector_details')
-.delete()
-.eq('vector_id', id)
-if (error) throw new Error(error.message);
-  router.refresh();
-  console.log("Vector Delete Successfully");
-}
+    const { error } = await supabase
+      .from("vector_details")
+      .delete()
+      .eq("vector_id", id);
+    if (error) throw new Error(error.message);
+    router.refresh();
+    console.log("Vector Delete Successfully");
+  }
 
   return (
     <div className="overflow-x-overflow">
       <VectorsSearchInput />
-      <NewVectorLinkBtn/>
+      <NewVectorLinkBtn />
       <Table className="border rounded-md p-2 h-auto" hoverable>
         <TableHead>
           <TableRow>
             <TableHeadCell className="w-[160px] text-center p-1">
-            Download  Vector
+              Download Vector
             </TableHeadCell>
             <TableHeadCell className="w-[70px] text-center p-1">
               Id
@@ -84,7 +83,7 @@ if (error) throw new Error(error.message);
                   key={nanoid()}
                   className="bg-white my-2 dark:border-gray-700 dark:bg-gray-800"
                 >
-                <VectorURLImg vectorPath={item.jpeg_path}/>
+                  <VectorURLImg vectorPath={item.jpeg_path} />
                   <TableCell className="whitespace-wrap w-[70px] text-center p-1 font-medium text-gray-900 dark:text-white">
                     {item.vector_id}
                   </TableCell>
@@ -103,12 +102,13 @@ if (error) throw new Error(error.message);
                   <TableCell className="w-[70px] text-center p-1">
                     {item.orientation}
                   </TableCell>
-               
-                  <DateTableCell createdAt={item.created_at}/>
+
+                  <DateTableCell createdAt={item.created_at} />
                   <TableCell className="w-[40px] text-center p-1">
                     <Link
                       href={`/admin/dashboard/vectors/edit/${item.vector_id}`}
-                      className="font-medium text-[#2E67DD] hover:underline dark:text-[#2E67DD]">
+                      className="font-medium text-[#2E67DD] hover:underline dark:text-[#2E67DD]"
+                    >
                       Edit
                     </Link>
                   </TableCell>

@@ -4,6 +4,7 @@ import useVectorFilter from "@/context/useVectorFilter";
 import React, { memo } from "react";
 import { BsSliders } from "react-icons/bs";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import SortBy from "./SortBy";
 
 const CombineFilters = () => {
   const { openVectorFilter, setOpenVectorFilter } = useVectorFilter();
@@ -39,17 +40,7 @@ const CombineFilters = () => {
           </span>
         </div>
         <div>
-          <div className="inline-flex flex=-row items-center justify-between">
-            <span className="p-1 inline-flex">
-              <h3 className="text-black font-poppins600 text-[20px] font-normal not-italic text-center">
-                Sort By&nbsp;&nbsp;&nbsp;
-                <b className=" not-italic text-[20px] font-poppins600 font-medium"></b>
-              </h3>
-              <button className="">
-                <MdKeyboardArrowDown fill={"black"} size={24} />
-              </button>
-            </span>
-          </div>
+          <SortBy />
         </div>
       </div>
     </>

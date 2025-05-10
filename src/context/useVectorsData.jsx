@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
+import _ from "lodash";
 import supabase from "@/utils/supabase/supabaseBrowserClient";
 const VectorsDataContext = createContext();
 
@@ -30,6 +31,7 @@ export const VectorsDataContextProvider = ({ children }) => {
           if (error) throw new Error(error.message);
           else {
             console.log(data);
+            console.log(_.chunk(data, 1));
             setVectors(data);
           }
         } else if (

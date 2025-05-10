@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import React, { memo, useState } from "react";
 import { FaArrowDownLong } from "react-icons/fa6";
 import VectorSVGDownloadLinkLoginAlert from "./VectorSVGDownloadLinkLoginAlert";
+import { Bounce, toast } from "react-toastify";
 
 const VectorSVGDownloadLink = () => {
   const router = useRouter();
@@ -34,8 +35,31 @@ const VectorSVGDownloadLink = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        toast.success("SVG File Download", {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       } catch (error) {
         console.error("Error downloading file:", error);
+        toast.error("Something went wrong", {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+        throw error;
       } finally {
         setLoading(false);
       }
@@ -44,19 +68,22 @@ const VectorSVGDownloadLink = () => {
 
   return (
     <>
-    {
-      ((loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ) ? (   <button
-        className={`bg-[#0BAC6F]  ${
-          loading ? "cursor-progress" : "cursor-pointer"
-        } flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white disabled:text-white/30`}
-        onClick={handleSVGDownload}
-        disabled={loading}
-      >
-        SVG&nbsp;
-        <FaArrowDownLong size={13} color="#FFFFFF" />
-      </button>):(<VectorSVGDownloadLinkLoginAlert/>)
-    }
-   
+      {(loggedInUser && !loggedInAdmin) || (!loggedInUser && loggedInAdmin) ? (
+        <>
+          <button
+            className={`bg-[#0BAC6F]  ${
+              loading ? "cursor-progress" : "cursor-pointer"
+            } flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white disabled:text-white/30`}
+            onClick={handleSVGDownload}
+            disabled={loading}
+          >
+            SVG&nbsp;
+            <FaArrowDownLong size={13} color="#FFFFFF" />
+          </button>
+        </>
+      ) : (
+        <VectorSVGDownloadLinkLoginAlert />
+      )}
     </>
   );
 };

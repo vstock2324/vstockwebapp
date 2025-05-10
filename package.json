@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.13",
+    "@radix-ui/react-dropdown-menu": "^2.1.14",
+    "@radix-ui/react-hover-card": "^1.1.13",
     "@radix-ui/react-slot": "^1.2.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
@@ -18,12 +20,14 @@
     "fabric": "^6.6.2",
     "flowbite-react": "^0.11.7",
     "jwt-decode": "^4.0.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.507.0",
     "nanoid": "^5.1.5",
-    "next": "^15.3.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.2.0",
     "use-debounce": "^10.0.4",
     "zod": "^3.24.3"
@@ -35,7 +39,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^15.3.1",
+    "eslint-config-next": "^15.3.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

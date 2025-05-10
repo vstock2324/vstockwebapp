@@ -16,6 +16,7 @@ import VectorSVGDownloadLink from "./VectorSVGDownloadLink";
 import VectorJPEGDownloadLink from "./VectorJPEGDownloadLink";
 import VectorAIDownloadLink from "./VectorAIDownloadLink";
 import { useRouter } from "next/navigation";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const VectorModal = () => {
   const {
@@ -25,8 +26,8 @@ const VectorModal = () => {
     sizeVectorModal,
     selectedVectorUrl,
   } = useVectorModal();
-  const router= useRouter();
-return (
+  const router = useRouter();
+  return (
     <>
       <Modal
         dismissible
@@ -78,26 +79,42 @@ return (
                   </p>
 
                   <div className="flex flex-row w-full items-center justify-around  m-0.5 p-1">
-              <VectorSVGDownloadLink/>
-             <VectorJPEGDownloadLink/>
-           <VectorAIDownloadLink/>
+                    <VectorSVGDownloadLink />
+                    <VectorJPEGDownloadLink />
+                    <VectorAIDownloadLink />
                   </div>
                 </div>
                 <div className=" hidden lg:flex lg:flex-col bg-[#F3F3F3] h-auto w-full  items-center space-y-1 px-3 py-1">
                   <p className="text-lg font-normal m-0.5">OR</p>
                   <div className="flex flex-row items-center w-full justify-around m-0.5 p-1">
-                    <button onClick={()=>router.push("/")} className="rounded-full text-center text-nowrap p-2 text-base w-1/2 text-white m-0.5 bg-[#0B85AC]">
+                    <button
+                      onClick={() => router.push("/")}
+                      className="rounded-full text-center cursor-pointer text-nowrap p-2 text-base w-1/2 text-white m-0.5 bg-[#0B85AC]"
+                    >
                       Edit Online
                     </button>
                     <button
-                       onClick={()=>router.push("/")}
-                      className="rounded-full text-center  p-2 text-base w-1/2 text-white text-nowrap m-0.5 bg-[#0B85AC]"
+                      onClick={() => router.push("/")}
+                      className="rounded-full text-center  cursor-pointer p-2 text-base w-1/2 text-white text-nowrap m-0.5 bg-[#0B85AC]"
                     >
                       Edit Animation
                     </button>
                   </div>
                 </div>
-                <VectorLikeShareWrapper/>
+                <VectorLikeShareWrapper />
+                <ToastContainer
+                  position="top-right"
+                  autoClose={4000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick={false}
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover={false}
+                  theme="light"
+                  transition={Bounce}
+                />
               </div>
             </div>
             <RelatedTag />
