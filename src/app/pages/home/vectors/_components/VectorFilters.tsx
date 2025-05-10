@@ -20,7 +20,7 @@ const VectorFilters=()=>{
  return (
     <>
       <div
-        className={`border rounded-r-xl p-1 left-0 shadow-xl mr-2 top-0 w-full h-full z-10 md:relative md:max-w-[30%] md:z-0 md:top-0 md:left-0 bg-white flex flex-col ${
+        className={`border rounded-r-xl p-1 left-0 shadow-xl mr-2 top-0 w-full h-full z-10 md:relative md:max-w-[350px] md:z-0 md:top-0 md:left-0 bg-white flex flex-col ${
           openVectorFilter === true ? "flex" : "hidden"
         } `}
       >

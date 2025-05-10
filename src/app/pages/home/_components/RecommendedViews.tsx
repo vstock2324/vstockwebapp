@@ -16,8 +16,11 @@ const RecommendedViews = () => {
         </div>
         <div className="flex flex-col m-1 p-1  justify-center items-center  px-8 md:flex-row md:space-x-8">
           <div className="cursor-pointer m-1 p-1">
-            {/* <Link href={{pathname:"/"}}> <img className="w-[264px] h-[188px] md:w-[557px] md:h-[395px] justify-self-center" src="./images/Navratri1.svg" alt=""/></Link> */}
-            <Link href={{ pathname: "/" }}>
+            
+            <Link href={{pathname:"/"}}> 
+            <img className="w-[264px] h-[188px] md:w-[557px] md:h-[395px] justify-self-center" src="/images/Navratri1.svg" alt=""/>
+            </Link>
+            {/* <Link href={{ pathname: "/" }}>
               {" "}
               <video
                 muted
@@ -25,7 +28,7 @@ const RecommendedViews = () => {
                 className="w-[264px] h-[188px] rounded-md md:w-[557px] md:h-[395px] justify-self-center"
                 src="https://uqmdwdzmfmvegzpietkc.supabase.co/storage/v1/object/public/vstock.bucket.1/admin_animations/animation-2.mp4"
               />
-            </Link>
+            </Link> */}
           </div>
           <div className=" m-1 p-1 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
             <div className="">
