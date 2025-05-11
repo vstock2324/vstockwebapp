@@ -25,8 +25,8 @@ const Footer = () => {
             There are three responses to a piece <br />
             of design - yes, no, and WOW!
           </p>
-          <div className="font-normal py-2 sm:py-4 text-white  space-x-2 sm:font-medium  sm:space-x-6 lg:space-x-12 justify-between">
-            <span className="hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
+          <div className="font-normal py-2 sm:py-4 text-white flex flex-col md:flex-row items-center  space-y-4  sm:font-medium  sm:space-x-6 lg:space-x-12 justify-between">
+            <span className="text hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               Privacy Policy
             </span>
             <span className="hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer   ">

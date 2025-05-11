@@ -81,7 +81,7 @@ const { data, error } = await supabase
                 key={nanoid()}
                 className="flex flex-row  space-x-1 items-center justify-between px-2.5 py-1.5 bg-[#2E67DD] rounded-full border-none"
               >
-                <span className="text-[14px]">{item.category_name}</span>
+                <span className="text-[14px] text-white">{item.category_name}</span>
                 <MdClose
                   className="cursor-pointer"
                   onClick={() =>

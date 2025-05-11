@@ -23,12 +23,6 @@ const NavBarLoginButton1 = async () => {
           >
             Login
           </Link>
-          <Link
-            href={"/pages/login"}
-            className="text-white text-[16px] border-none  hover:cursor-pointer  bg-[#2E67DD] rounded-md"
-          >
-            Sign Up
-          </Link>
         </div>
       )}
     </li>

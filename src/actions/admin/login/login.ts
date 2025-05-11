@@ -16,6 +16,7 @@ export async function handleAdminLoginFormSubmit(formData: FormData) {
     console.log(error);
   }
   revalidatePath("/", "layout");
+  permanentRedirect("/admin/dashboard/users");
 }
 
 export async function signout() {

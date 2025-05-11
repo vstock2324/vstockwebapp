@@ -17,6 +17,8 @@ import VectorJPEGDownloadLink from "./VectorJPEGDownloadLink";
 import VectorAIDownloadLink from "./VectorAIDownloadLink";
 import { useRouter } from "next/navigation";
 import { Bounce, ToastContainer } from "react-toastify";
+import VectorModalSmallPreviousBtn from "./VectorModalSmallPreviousBtn";
+import VectorModalSmallNextBtn from "./VectorModalSmallNextBtn";
 
 const VectorModal = () => {
   const {
@@ -122,6 +124,8 @@ const VectorModal = () => {
           </div>
         </ModalBody>
         <VectorModalNextBtn />
+        <VectorModalSmallPreviousBtn/>
+        <VectorModalSmallNextBtn/>
       </Modal>
     </>
   );

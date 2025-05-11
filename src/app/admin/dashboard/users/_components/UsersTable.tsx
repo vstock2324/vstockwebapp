@@ -20,11 +20,13 @@ const UsersTable = async () => {
   if (error || !users) throw new Error(error?.message);
   return (
     <div className="overflow-x-auto">
-      <Table className="border" >
+      <Table className="border">
         <TableHead className="border-b">
           <TableRow>
             <TableHeadCell className="text-center px-1">AVATAR</TableHeadCell>
-            <TableHeadCell className="text-center px-1">Full Name</TableHeadCell>
+            <TableHeadCell className="text-center px-1">
+              Full Name
+            </TableHeadCell>
             <TableHeadCell className="text-center px-1">ID</TableHeadCell>
             <TableHeadCell className="text-center px-1">EMAIL</TableHeadCell>
             <TableHeadCell className="text-center px-1">PHONE</TableHeadCell>
@@ -45,17 +47,19 @@ const UsersTable = async () => {
                   className="bg-white dark:border-gray-700 dark:bg-gray-800"
                 >
                   <TableCell>
-                    
-                      <Image
-                        className="rounded-full"
-                        src={user.user_metadata["avatar_url"] ?? "/images/admin.png"}
-                        alt=""
-                        width={30}
-                        height={30}
-                      />
-                    
+                    <Image
+                      className="rounded-full"
+                      src={
+                        user.user_metadata["avatar_url"] ?? "/images/admin.png"
+                      }
+                      alt=""
+                      width={75}
+                      height={75}
+                    />
                   </TableCell>
-                  <TableCell>{user.user_metadata["full_name"] ?? "Admin"}</TableCell>
+                  <TableCell>
+                    {user.user_metadata["full_name"] ?? "Admin"}
+                  </TableCell>
                   <TableCell className="whitespace-wrap font-medium text-gray-900 dark:text-white">
                     {user.id}
                   </TableCell>

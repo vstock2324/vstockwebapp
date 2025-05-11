@@ -3,7 +3,7 @@ import useVectorModal from "@/context/useVectorModal";
 import useVectorsData from "@/context/useVectorsData";
 import React, { memo } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-const VectorModalPreviousBtn = () => {
+const VectorModalSmallPreviousBtn = () => {
   const {vectors}=useVectorsData();
   const {selectedVector,setSelectedVector}=useVectorModal();
   function handleModalPrevClick(){
@@ -14,10 +14,10 @@ const VectorModalPreviousBtn = () => {
     }
   }
   return (
-    <button onClick={handleModalPrevClick}  className={`${ vectors.indexOf(selectedVector)===0 ? "hidden":"flex"  } absolute hidden md:flex p-2 cursor-pointer rounded-full bg-none hover:bg-white/15 top-1/2  -translate-y-1/2  -left-16`}>
-      <FaChevronLeft className={`${vectors.indexOf(selectedVector)===0 ? "hidden":"flex"}`} size={30} fill="#EEE" />
+    <button onClick={handleModalPrevClick}  className={`${ vectors.indexOf(selectedVector)===0 ? "md:hidden":"flex"  } absolute  flex md:hidden p-2 cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[7%] left-2/5   -translate-x-4/5`}>
+      <FaChevronLeft className={`${vectors.indexOf(selectedVector)===0 ? "hidden":"flex"}`} size={24} fill="#EEE" />
     </button>
   );
 };
 
-export default memo(VectorModalPreviousBtn);
+export default memo(VectorModalSmallPreviousBtn);

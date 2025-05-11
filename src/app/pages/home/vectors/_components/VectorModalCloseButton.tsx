@@ -17,7 +17,9 @@ const VectorModalCloseButton=()=>{
   }
   return (
     <>
-    <IoClose size={30} className="absolute bg-none p-2 rounded-full hover:bg-white/15 top-0 -right-12 cursor-pointer h-auto w-auto" onClick={handleModalClose}  color="white" />
+    <IoClose size={24} className="flex md:hidden absolute bg-none p-2 rounded-full  border-none -top-0.5 -right-1 cursor-pointer h-auto w-auto" onClick={handleModalClose}  color="black" />
+    <IoClose size={30} className="hidden md:flex   absolute bg-none p-2 rounded-full hover:bg-white/15 top-0 -right-12 cursor-pointer h-auto w-auto" onClick={handleModalClose}  color="white" />
+ 
     </>
   );
 }

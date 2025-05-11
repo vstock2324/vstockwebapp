@@ -12,17 +12,17 @@ const SearchTags1 = async () => {
   if (countError) throw new Error(countError.message);
   if (count !== null) {
     startIndex = Math.floor(Math.random() * count);
-    if (startIndex > count - 2) {
-      startIndex = count - 2;
+    if (startIndex > count - 1) {
+      startIndex = count - 1;
     }
   }
   const { data, error } = await supabase
     .from("tags")
     .select("*")
-    .range(startIndex, startIndex + 2);
+    .range(startIndex, startIndex + 1);
   if (error) throw new Error(error.message);
   return (
-    <div className="hidden sm:flex lg:hidden">
+    <div className="pb-10 flex sm:hidden">
       <div className="flex flex-row items-center justify-center gap-x-[10px]">
         {data.map((item) => {
           return (

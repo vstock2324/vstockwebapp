@@ -4,7 +4,7 @@ import useVectorModal from "@/context/useVectorModal";
 import React, { memo } from "react";
 import { FaChevronRight } from "react-icons/fa";
 
-const VectorModalNextBtn = () => {
+const VectorModalSmallNextBtn = () => {
   const {vectors}=useVectorsData();
   const {selectedVector,setSelectedVector}=useVectorModal();
   function handleModalNextClick() {
@@ -19,12 +19,12 @@ const VectorModalNextBtn = () => {
     <button
       onClick={handleModalNextClick}
       className={` ${
-        vectors.indexOf(selectedVector)===vectors.length -1 ? "hidden" : "md:flex"
-      }   absolute p-2 hidden md:flex cursor-pointer rounded-full bg-none hover:bg-white/15  top-1/2 -translate-y-1/2  -right-16 `}
+        vectors.indexOf(selectedVector)===vectors.length -1 ? "hidden" : "flex"
+      }   absolute p-2 md:hidden flex cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[7%]  right-2/5  translate-x-4/5`}
     >
-      <FaChevronRight className={`${vectors.indexOf(selectedVector)===vectors.length-1 ? "hidden" : "flex"}`} size={30} fill="#EEE" />
+      <FaChevronRight className={`${vectors.indexOf(selectedVector)===vectors.length-1 ? "hidden" : "flex"}`} size={24} fill="#EEE" />
     </button>
   );
 };
 
-export default memo(VectorModalNextBtn);
+export default memo(VectorModalSmallNextBtn);

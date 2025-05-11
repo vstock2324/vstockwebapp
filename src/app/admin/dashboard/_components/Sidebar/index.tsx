@@ -199,17 +199,11 @@ const menuGroups = [
         icon:<FaVectorSquare size={24}/>,
         label:"Vectors",
         route:"/admin/dashboard/vectors",
-        children: [
-          { label: "New", route: "/admin/dashboard/vectors/new" }
-        ],
       },
       {
         icon: <FaLayerGroup size={24}/>,
         label: "Categories",
         route: "/admin/dashboard/categories",
-        children: [
-          { label: "New", route: "/admin/dashboard/categories/new" }
-        ],
       },
       {
         icon: <HiTemplate size={24}/>,
@@ -229,9 +223,6 @@ const menuGroups = [
         icon:<RiHashtag size={24}/>,
         label:"Tags",
         route:"/admin/dashboard/tags",
-        children: [
-          { label: "New", route: "/admin/dashboard/tags/new" }
-        ],
       },
     ],
   },

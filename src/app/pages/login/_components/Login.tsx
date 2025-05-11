@@ -17,9 +17,9 @@ const Login = () => {
   // const pathname=usePathname();
   return (
     <div className="flex flex-col  items-center justify-between w-full lg:w-[60%] p-1">
-      <div className="mb-[40px] gap-y-4 px-1 flex flex-col items-center justify-start w-3/5">
+      <div className="mb-[40px] gap-y-4 px-1 flex flex-col items-center justify-start w-full lg:w-3/5">
         <div className="">
-          <h1 className=" font-poppins600 not-italic text-[40px] text-center  font-bold text-[#2E67DD]">
+          <h1 className=" font-poppins600 not-italic  text-[30px]  lg:text-[40px] text-center  font-bold text-[#2E67DD]">
             Login/Sign Up
           </h1>
         </div>
@@ -49,32 +49,31 @@ const Login = () => {
             </h4>
           </div>
         </div>
-        <div className=" m-1  w-full items-center justify-center  flex flex-col gap-y-4 ">
-          <div className=" m-1  flex flex-col items-center justify-center  w-full ">
-            <div className=" relative m-1  flex flex-row items-center justify-center w-full">
+        <div className=" items-center justify-center  flex flex-col gap-y-4  w-3/5">
+          <div className=" flex flex-col items-center justify-center  gap-y-2 w-full ">
+            <div className=" relative flex flex-row items-center justify-center w-full max-w-[400px]">
               <input
                 onChange={(event) => {
                   setMobileState(Exactly10Digits(event.target.value));
                 }}
-                className="focus:outline-1  focus:outline-[#858585] bg-[#F2F2F2] rounded-md relative  w-full  p-4  placeholder-[#9A9A9A]"
+                className="focus:outline-1 min-w-[340px]  focus:outline-[#858585] bg-[#F2F2F2] rounded-md relative  w-full  p-4  placeholder-[#9A9A9A]"
                 placeholder="Mobile Number"
               />
-              <input
+              <button
                 type="submit"
-                value={"Get OTP"}
                 className={` ${
                   mobileState
                     ? "bg-[#2E67DD] text-white"
                     : "bg-[#E7E6F2] text-black"
                 } text-sm text-center cursor-pointer font-semibold absolute rounded-lg  focus:outline-[#858585] m-1 px-4 py-3 right-0.5 shadow-2xl`}
-              />
+              >Get OTP</button>
             </div>
-            <div className=" m-1 flex flex-row items-center justify-center w-full ">
+            <div className=" m-1 flex flex-row items-center justify-center w-full max-w-[400px] ">
               <input
                 onChange={(event) => {
                   setOtpState(Exactly6Digits(event.target.value));
                 }}
-                className=" focus:outline-[#858585] bg-[#F2F2F2] focus:outline-1 relative rounded-md  w-full p-4  placeholder-[#9A9A9A]"
+                className=" focus:outline-[#858585] min-w-[340px] bg-[#F2F2F2] focus:outline-1 relative rounded-md  w-full p-4  placeholder-[#9A9A9A]"
                 placeholder="Enter 6 digits OTP here"
               />
             </div>

@@ -3,24 +3,24 @@ import { nanoid } from "nanoid";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 
-const SearchNestedTags1 = async () => {
+const SearchNestedTags0 = async () => {
   const supabase = await createClient();
   const {count,error:countError}=await supabase.from("tags").select("*",{count:"exact"});
   let startIndex=0;
   if(countError) throw new Error(countError.message);
   if(count!==null){
   startIndex=Math.floor(Math.random()*count);
-  if(startIndex>count-2){
-       startIndex=count-2;
+  if(startIndex>count-1){
+       startIndex=count-1;
   }
 }
-  const { data, error } = await supabase.from("tags").select("*").range(startIndex, startIndex+2 );
+  const { data, error } = await supabase.from("tags").select("*").range(startIndex, startIndex+1 );
   if (error) throw new Error(error.message);
 
 
   return (
     <>
-      <div className="pb-2 hidden sm:flex lg:hidden">
+      <div className="pb-2 flex sm:hidden">
         <div className="flex flex-row items-center justify-center gap-x-4">
           {data.map((item) => {
             return (
@@ -63,4 +63,4 @@ const SearchNestedTags1 = async () => {
   );
 };
 
-export default memo(SearchNestedTags1);
+export default memo(SearchNestedTags0);
