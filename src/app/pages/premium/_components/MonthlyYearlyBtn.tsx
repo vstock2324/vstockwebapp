@@ -107,7 +107,7 @@ const MonthlyYearlyBtn = () => {
         </div>
       </div>
       <div className="w-full mx-0.5 p-0.5">
-        <div className="flex flex-col lg:flex-row items-center justify-around m-0.5 p-0.5">
+        <div className="flex flex-col space-y-4 lg:space-y-0  lg:flex-row items-center justify-around m-0.5 p-0.5">
           {switcher === "Monthly" ? (
             monthlycards.map((card) => {
               return (

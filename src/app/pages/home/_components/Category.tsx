@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import "../../../globals.css";
 import CategoryVectorLink from "./CategoryVectorLink";
 import CategoryAnimationLink from "./CategoryAnimationLink";
 import CategoryIllustrationsLink from "./CategoryIllustrationsLink";
@@ -7,7 +6,7 @@ import CategoryIllustrationsLink from "./CategoryIllustrationsLink";
 
 const Category = () => {
   return (
-    <div className="my-1 mx-[20px] sm:mx-[64px] max-w-[1440px]">
+    <div className="my-1 mx-[20px] sm:mx-[64px] xl:max-w-[1200px] 2xl:max-w-[1440px]">
       <div className="flex flex-col m-1 ">
         <div className="flex flex-col  py-6 space-y-2 justify-center items-center">
           <h1 className=" text-center text-[14px] px-6 sm:px-8 md:px-10  sm:text-[25px] md:text-[30px] lg:[35px] xl:text-[40px] font-semibold text-[#1E1E1E]  font-poppins600  tracking-[0.0375rem] text-nowrap">

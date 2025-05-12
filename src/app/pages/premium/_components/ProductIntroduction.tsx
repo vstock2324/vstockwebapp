@@ -12,7 +12,7 @@ const ProductIntroduction = () => {
           </h2>
         </div>
         <div className="w-full flex flex-col justify-center items-center pb-10  m-0.5">
-          <p className="text-[#5D5D5D] text-justify  m-0.5 p-0.5 text-[16px] w-[400px] font-poppins400 font-normal">
+          <p className="text-[#5D5D5D] text-justify text-wrap  w-full  m-0.5 p-0.5 text-[16px] sm:max-w-[400px] font-poppins400 font-normal">
             All plans include video editing features, unlimited storage,
             unlimited project files, and auto captions.
           </p>

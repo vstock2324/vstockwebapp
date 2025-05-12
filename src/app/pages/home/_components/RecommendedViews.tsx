@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { memo } from "react";
 import "@/app/globals.css";
@@ -35,7 +36,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className=""
+                  className="max-w-[264px]  max-h-[187.217px]"
                   src="/images/r1.svg"
                   alt={""}
                 />
@@ -46,7 +47,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className=""
+                  className="max-w-[264px]  max-h-[187.217px]"
                   src="/images/r3.svg"
                   alt={""}
                 />
@@ -57,7 +58,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className=""
+                  className="max-w-[264px]  max-h-[187.217px]"
                   src="/images/r2.svg"
                   alt={""}
                 />
@@ -68,7 +69,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className=""
+                  className="max-w-[264px]  max-h-[187.217px]"
                   src="/images/r4.svg"
                   alt={""}
                 />
