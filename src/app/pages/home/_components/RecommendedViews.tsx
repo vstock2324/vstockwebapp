@@ -7,10 +7,9 @@ const RecommendedViews = () => {
   
   return (
     <div className="bg-[#F1F4FB]">
-      <div className=" mx-auto">
-        <div className="py-8 px-25">
+      <div className="container mx-auto">
+        <div className="py-8 px-10 md:px-25 max-w-[1440px]">
           <h2 className="text-center md:text-start  text-[#001A5B] font-poppins600 font-medium  not-italic text-nowrap text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px]">
-            {" "}
             Recommended to You
           </h2>
         </div>

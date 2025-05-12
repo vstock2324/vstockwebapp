@@ -20,16 +20,16 @@ const UsersTable = async () => {
   if (error || !users) throw new Error(error?.message);
   return (
     <div className="overflow-x-auto">
-      <Table className="border">
+      <Table className="border rounded-md " hoverable>
         <TableHead className="border-b">
           <TableRow>
-            <TableHeadCell className="text-center px-1">AVATAR</TableHeadCell>
-            <TableHeadCell className="text-center px-1">
+            <TableHeadCell className="text-center px-3">AVATAR</TableHeadCell>
+            <TableHeadCell className="text-center px-2">
               Full Name
             </TableHeadCell>
-            <TableHeadCell className="text-center px-1">ID</TableHeadCell>
-            <TableHeadCell className="text-center px-1">EMAIL</TableHeadCell>
-            <TableHeadCell className="text-center px-1">PHONE</TableHeadCell>
+            <TableHeadCell className="text-center px-2">USER ID</TableHeadCell>
+            <TableHeadCell className="text-center px-2">EMAIL</TableHeadCell>
+            <TableHeadCell className="text-center px-2">PHONE</TableHeadCell>
             <TableHeadCell>
               <span className="sr-only">Edit</span>
             </TableHeadCell>
@@ -46,33 +46,33 @@ const UsersTable = async () => {
                   key={user.id}
                   className="bg-white dark:border-gray-700 dark:bg-gray-800"
                 >
-                  <TableCell>
+                  <TableCell className="px-3">
                     <Image
                       className="rounded-full"
                       src={
                         user.user_metadata["avatar_url"] ?? "/images/admin.png"
                       }
-                      alt=""
-                      width={75}
-                      height={75}
+                      alt="User Image"
+                      width={60}
+                      height={60}
                     />
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="px-2">
                     {user.user_metadata["full_name"] ?? "Admin"}
                   </TableCell>
-                  <TableCell className="whitespace-wrap font-medium text-gray-900 dark:text-white">
+                  <TableCell className="whitespace-wrap font-medium px-2 text-gray-900 dark:text-white">
                     {user.id}
                   </TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>{user.phone}</TableCell>
-                  <TableCell>
+                  <TableCell className="px-2">{user.email}</TableCell>
+                  <TableCell className="px-2">{user.phone}</TableCell>
+                  <TableCell className="px-2">
                     <Link
                       href="#"
                       className="font-medium text-[#2E67DD] hover:underline dark:text-[#2E67DD]"
                     >
                       Edit
                     </Link>
-                  </TableCell>
+                  </TableCell >
                   <UserDeleteButtonWrapper userId={user.id} />
                 </TableRow>
               );

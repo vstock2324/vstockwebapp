@@ -6,7 +6,7 @@ import { memo } from "react";
 const UserDeleteButtonWrapper = ({ userId }: {userId: string}) => {
 const handleDeleteUserWithId = handleDeleteUser.bind(null, userId);
 return (
-    <TableCell>
+    <TableCell className="px-2">
      <form action={handleDeleteUserWithId}>   
       <Button  type="submit"  className="cursor-pointer"  color={"red"}>
         Delete

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { createClient } from "../../../../utils/supabase/server";
 import LoggedInUser from "./LoggedInUser";
 
-const NavBarLoginButton1 = async () => {
+const NavBarLoginButton0 = async () => {
   const supabase = await createClient();
   const {
     data: { user },
@@ -31,4 +31,4 @@ const NavBarLoginButton1 = async () => {
   );
 };
 
-export default memo(NavBarLoginButton1);
+export default memo(NavBarLoginButton0);

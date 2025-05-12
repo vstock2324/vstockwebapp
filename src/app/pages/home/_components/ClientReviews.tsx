@@ -30,8 +30,6 @@ const clients = [
 ];
 
 const ClientReview = () => {
-
-
   return (
     <>
       <div className="mt-20 mb-[100.61px] bg-[#FEFAFF] ">
@@ -45,7 +43,7 @@ const ClientReview = () => {
             </h2>
           </div>
           <div className="flex flex-row items justify-center mt-[44px] ">
-            <div className="flex items-center justify-center">
+            <div className="hidden xl:flex flex-col items-center justify-center">
               <IoIosArrowDropleftCircle
                 className=" cursor-pointer"
                 color="#5E5CEE"
@@ -67,7 +65,7 @@ const ClientReview = () => {
                 );
               })}
             </div>
-            <div className=" flex items-center justify-center">
+            <div className=" hidden xl:flex flex-col items-center justify-center">
               <IoIosArrowDroprightCircle
                 className=" cursor-pointer"
                 color="#5E5CEE"

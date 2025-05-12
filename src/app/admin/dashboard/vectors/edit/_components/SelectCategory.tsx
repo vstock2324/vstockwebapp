@@ -65,7 +65,7 @@ const { data, error } = await supabase
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           categories.map((item: any) => {
             return (
-              <option value={item.id} key={nanoid()}>
+              <option value={item.id} key={nanoid().toString()}>
                 {item.name}
               </option>
             );
@@ -78,12 +78,13 @@ const { data, error } = await supabase
           vectorCategories.map((item: any) => {
             return (
               <li
-                key={nanoid()}
+                key={nanoid().toString()}
                 className="flex flex-row  space-x-1 items-center justify-between px-2.5 py-1.5 bg-[#2E67DD] rounded-full border-none"
               >
                 <span className="text-[14px] text-white">{item.category_name}</span>
                 <MdClose
                   className="cursor-pointer"
+                  color="white"
                   onClick={() =>
                     handleCatgeoryDelete(params.id, item.category_id)
                   }

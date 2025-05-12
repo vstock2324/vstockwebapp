@@ -28,10 +28,10 @@ const DropdownUser = () => {
             className="overflow-hidden rounded-full"
           />
         </span>
-
         <span className="flex items-center gap-2 font-medium text-dark dark:text-dark-6">
-          <span className="hidden lg:block">{loggedInAdmin?.email.split("+")[0]}</span>
-
+          <span className="hidden lg:block">
+            {loggedInAdmin?.email.split("+")[0]}
+          </span>
           <svg
             className={`fill-current duration-200 ease-in ${
               dropdownOpen && "rotate-180"
@@ -58,8 +58,6 @@ const DropdownUser = () => {
           className={`absolute -right-3 mt-[22px] flex w-[280px] flex-col rounded-lg border-b border-r  border-l border-stroke bg-white shadow-default dark:border-dark-3 dark:bg-gray-dark`}
         >
           <div className="flex items-center gap-2.5 px-3 pb-5.5 pt-3.5">
-    
-
             <span className="block">
               <span className="block font-medium text-dark dark:text-white">
                 {loggedInAdmin?.email.split("+")[0]}

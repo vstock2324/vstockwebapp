@@ -12,7 +12,7 @@ const NavBar2 = () => {
       <nav className="hidden lg:flex lg:flex-row lg:items-center max-w-[1440px] lg:justify-center lg:w-full">
         <ul className="list-none text-[20px] text-white flex flex-row justify-between items-center w-full ">
           <li className="flex flex-col items-start justify-start pb-2">
-            <Link href={"/pages/home"}>
+            <Link href={"/pages/home"} prefetch={true}>
               {" "}
               <Image
                 alt="logo"
@@ -23,12 +23,12 @@ const NavBar2 = () => {
             </Link>
           </li>
           <li>
-            <Link href={"/pages/home"}>Home</Link>
+            <Link href={"/pages/home"} prefetch={true}>Home</Link>
           </li>
           <TemplatesListItem />
           <NavBar2ProjectsLinkContextWrapper/>          
           <li>
-            <Link href={"/pages/premium"}>Premium</Link>
+            <Link href={"/pages/premium"} prefetch={true}>Premium</Link>
           </li>
           <NavBarLoginButton2 />
         </ul>
