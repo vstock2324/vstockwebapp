@@ -5,27 +5,27 @@ import { memo } from "react";
 const PromotionalViews = () => {
   return (
     <div className="   ">
-      <div className="container mx-auto  mt-[-20px] ">
+      <div className="container mx-[5px] sm:mx-auto  mt-[20px] ">
         <div className="  xl:m-[100px]  ">
           <div className="flex flex-col lg:flex-row xl:flex-row justify-around items-center  ">
             <div className=" lg:mb-0">
-              <h1 className="text-2xl text-black sm:text-[40px]  md:text-[30px] lg:text-[40px] xl:text-[40px] font-bold font-poppins600  mt-8 ">
+              <h1 className="text-black text-[clamp(16px,16px_+_2.5vw,55px)] font-bold font-poppins  mt-8 ">
                 Quality Way of Promotion
               </h1>
-              <h1 className="text-2xl text-black lg:text-[40px] sm:text-[40px]  font-bold  font-poppins600 xl:mt-5">
+              <h1 className="text-black text-[clamp(16px,16px_+_2.5vw,55px)]  font-bold  font-poppins xl:mt-5">
                 Now in your hands
               </h1>
 
-              <p className="text-base text-black lg:text-[23px] md:text-[12px] font-medium sm:text-[30px] sm:mt-7 xl:mt-9">
+              <p className=" text-black text-[clamp(10px,10px_+_2.5vw,34px)] font-poppins font-medium sm:mt-7 xl:mt-9">
                 Quickly Create the Quality content and{" "}
-                <span className="block xl:mt-2 text-black">
+                <span className="block font-poppins xl:mt-2 text-black text-[clamp(10px,10px_+_2.5vw,34px)]">
                   publish on multiple social media platforms.
                 </span>
               </p>
               <div className="xl:mt-8">
-                <span className="text-base">
+                <span className="">
                   <Link
-                    className="text-[#2E67DD] xl:text-[22px] no-underline"
+                    className="text-[#2E67DD] font-poppins text-[clamp(10px,10px_+_2.4vw,31px)] no-underline"
                     href=""
                   >
                     Explore{" "}

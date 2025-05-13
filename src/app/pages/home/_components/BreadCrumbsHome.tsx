@@ -28,7 +28,7 @@ const BreadCrumbsHome = () => {
                 <span>
                   <IoMdHome color="white" className="mb-1" size={18} />
                 </span>
-                <Link className="text-white" href={`/pages/${arr.join("/")}`}>
+                <Link className="text-white font-poppins" href={`/pages/${arr.join("/")}`}>
                   {item.slice(0, 1).toUpperCase() +
                     item.slice(1, item.length).toLowerCase()}
                 </Link>
@@ -43,7 +43,7 @@ const BreadCrumbsHome = () => {
                   key={nanoid().toString()}
                 >
                   <Link
-                    className="text-white"
+                    className="text-white font-poppins"
                     href={`/pages/${arr.join("/")}?page=${searchParams.get(
                       "page"
                     )}`}

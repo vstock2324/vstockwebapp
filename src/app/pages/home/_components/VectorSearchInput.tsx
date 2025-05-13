@@ -33,14 +33,13 @@ const VectorsSearchInput = () => {
   return (
     <>
       <div className="h-10 mx-auto" />
-      <div className="relative m-1 p-1 min-w-[330px]  w-[76%] max-w-[1000px] flex flex-row items-center justify-center">
+       <div className="relative m-1 p-1 min-w-[330px]  w-[76%] max-w-[1000px] flex flex-row items-center justify-center">
         <input
           type="text"
           placeholder={"Vectors"}
           onChange={handleSearch}
           className="rounded-[77px]  bg-[#5885E4]  text-white text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins400   font-poppins400  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
         />
-
         {isSearching ? (
           <BiLoaderCircle
             color="white"

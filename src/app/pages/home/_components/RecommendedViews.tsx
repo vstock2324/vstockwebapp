@@ -36,7 +36,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className="max-w-[264px]  max-h-[187.217px]"
+                  className=""
                   src="/images/r1.svg"
                   alt={""}
                 />
@@ -47,7 +47,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className="max-w-[264px]  max-h-[187.217px]"
+                  className=""
                   src="/images/r3.svg"
                   alt={""}
                 />
@@ -58,7 +58,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className="max-w-[264px]  max-h-[187.217px]"
+                  className=""
                   src="/images/r2.svg"
                   alt={""}
                 />
@@ -69,7 +69,7 @@ const RecommendedViews = () => {
                 <Image
                   width={264}
                   height={187.217}
-                  className="max-w-[264px]  max-h-[187.217px]"
+                  className=""
                   src="/images/r4.svg"
                   alt={""}
                 />

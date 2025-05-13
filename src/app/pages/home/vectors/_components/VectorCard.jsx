@@ -15,14 +15,14 @@ const VectorCard = ({ card }) => {
   const { setOpenVectorModal, setSelectedVector, setSelectedVectorUrl } =
     useVectorModal();
   const supabase = createClient();
-  const { data } = supabase.storage
+  const { data :{publicUrl} } = supabase.storage
     .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME}`)
     .getPublicUrl(`${card.jpeg_path}`);
 
   function handleVectorCardClick() {
     console.log(card);
     setSelectedVector(card);
-    setSelectedVectorUrl(data.publicUrl);
+    setSelectedVectorUrl(publicUrl);
     setOpenVectorModal(true);
   }
 
@@ -37,7 +37,7 @@ const VectorCard = ({ card }) => {
             className="rounded cursor-pointer"
             loading="lazy"
             alt=""
-            src={data.publicUrl}
+            src={publicUrl}
             width={200}
             height={200}
           />
@@ -52,7 +52,7 @@ const VectorCard = ({ card }) => {
           className="rounded  object-fill aspect-auto"
           loading="lazy"
           alt=""
-          src={data.publicUrl}
+          src={publicUrl}
           width="600px"
         /></button></Suspense>
       </HoverCardContent>

@@ -33,7 +33,7 @@ const HomeSearchInput = () => {
   return (
     <>
       <div className="h-10 mx-auto" />
-      <div className="relative m-1 p-1 min-w-[300px] sm:min-w-[400px] w-[76%] max-w-[1000px] inline-flex flex-row items-center justify-center">
+     <div className="relative m-1 p-1 min-w-[300px] sm:min-w-[400px] w-[76%] max-w-[1000px] inline-flex flex-row items-center justify-center">
         <input
           type="text"
           placeholder={"Search for anything"}

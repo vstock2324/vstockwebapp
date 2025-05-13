@@ -8,13 +8,13 @@ const CategoryAnimationLink=()=> {
               <video
                 width={250}
                 height={142}
-                className="max-w-[250px]  max-h-[142px] opacity-15  bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
+                className="max-w-[250px]  max-h-[142px] opacity-30  bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
                 src="https://uqmdwdzmfmvegzpietkc.supabase.co/storage/v1/object/public/vstock.bucket.1/admin_animations/animation-1.mp4"
                 muted
                 loop
                 autoPlay
               />
-              <h3 className="text-center font-normal text-[#1E1E1E]  font-poppins400  leading-normal text-[16px] md:text-[20px] ">
+              <h3 className="text-center hover:font-bold hover:transition-all hover:ease-in-out font-normal font-poppins text-[#1E1E1E]   leading-normal text-[clamp(14px,14px_+_1.2vw,22px)]">
                 Video Animations
               </h3>
             </div>

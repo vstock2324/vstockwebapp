@@ -3,6 +3,7 @@ import Link from "next/link";
 import { createClient } from "../../../../utils/supabase/server";
 import LoggedInUser from "./LoggedInUser";
 import { jwtDecode, JwtPayload } from "jwt-decode";
+import { FaRegUser } from "react-icons/fa6";
 
 interface ExtendedJwtPayload extends JwtPayload {
   user_role?: string;
@@ -41,13 +42,15 @@ const NavBarLoginButton2 = async () => {
     }
   } else {
     return (
-      <li>
-        <Link
-          className="border border-white  rounded-[25px] px-6 py-1"
-          href={"/pages/login"}
-        >
-          Login
-        </Link>
+      <li className="flex flex-row items-center justify-between gap-x-4 pb-1">
+            <Link
+            className=" flex flex-row items-center justify-center space-x-3 border-white dark:border-white border rounded-full px-3 py-0.5 hover:cursor-pointer text-nowrap"
+            href={"/pages/login"}
+            prefetch
+          >
+            <FaRegUser color="white" size={14}/>
+            <span className="text-white text-[20px]">Login</span>
+          </Link>
       </li>
     );
   }

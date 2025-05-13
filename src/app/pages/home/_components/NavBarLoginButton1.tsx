@@ -2,6 +2,7 @@ import { memo } from "react";
 import Link from "next/link";
 import { createClient } from "../../../../utils/supabase/server";
 import LoggedInUser from "./LoggedInUser";
+import { FaRegUser } from "react-icons/fa6";
 
 const NavBarLoginButton1 = async () => {
   const supabase = await createClient();
@@ -9,7 +10,7 @@ const NavBarLoginButton1 = async () => {
     data: { user },
   } = await supabase.auth.getUser();
   return (
-    <li className="flex flex-row items-center justify-between gap-x-4">
+    <li className="flex flex-row items-center justify-between gap-x-4 pb-1">
       {user ? (
         <LoggedInUser
         userId={user.id}
@@ -17,15 +18,14 @@ const NavBarLoginButton1 = async () => {
           picture_url={user.user_metadata["avatar_url"] || null}
         />
       ) : (
-        <div className="flex flex-row items-center justify-between gap-x-4">
-          <Link
-            className="text-white text-[16px] border-none hover:cursor-pointer"
+                      <Link
+            className=" flex flex-row items-center justify-center space-x-3 border-white dark:border-white border rounded-full px-3 py-0.5 hover:cursor-pointer text-nowrap"
             href={"/pages/login"}
             prefetch
           >
-            Login
+            <FaRegUser color="white" size={12}/>
+            <span className="text-white text-[18px]">Login</span>
           </Link>
-        </div>
       )}
     </li>
   );
