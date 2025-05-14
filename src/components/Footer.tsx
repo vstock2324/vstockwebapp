@@ -29,7 +29,7 @@ const Footer = () => {
             <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px]  hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               Privacy Policy
             </span>
-            <span className=" font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer   ">
+            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer   ">
               Contact Us
             </span>
             <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">

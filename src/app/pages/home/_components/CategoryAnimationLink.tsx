@@ -8,7 +8,7 @@ const CategoryAnimationLink=()=> {
               <video
                 width={250}
                 height={142}
-                className="max-w-[250px]  max-h-[142px] opacity-30  bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
+                className="w-[250px]  h-[142px] object-fill opacity-30  bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
                 src="https://uqmdwdzmfmvegzpietkc.supabase.co/storage/v1/object/public/vstock.bucket.1/admin_animations/animation-1.mp4"
                 muted
                 loop

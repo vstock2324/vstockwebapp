@@ -2,7 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import React, { memo } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 const CategoryVectorLink = async () => {
   const supabase = await createClient();
@@ -23,10 +23,11 @@ const CategoryVectorLink = async () => {
   return (
     <Link href={`/pages/home/vectors?page=1`} prefetch={true}>
       <div className="cursor-pointer flex flex-col items-center justify-between space-y-[30px]">
-        <Image
-          width={250}
-          height={142}
-          className="max-w-[250px] max-h-[142px] bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
+        <img
+          // width={250}
+          // height={142}
+          // fill={true}
+          className="w-[250px] h-[142px] object-fill  bg-cover bg-[#D9D9D9]  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
           // src="../../images/ne1.svg"
           src={publicUrl || "../../images/ne1.svg"}
           alt="Vector Graphics"

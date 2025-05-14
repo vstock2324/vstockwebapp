@@ -16,6 +16,7 @@ import FileTypeSVGBtn from "./FileTypeSVGBtn";
 import FileTypeVectorBtn from "./FileTypeVectorBtn";
 import FileTypeAIBtn from "./FileTypeAIBtn";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
 const VectorFilters=()=>{
   const {openVectorFilter,setOpenVectorFilter} = useVectorFilter();
   const pathname= usePathname();
@@ -36,18 +37,16 @@ const VectorFilters=()=>{
           openVectorFilter === true ? "flex" : "hidden"
         } `}
       >
-        <div className="flex flex-row md:hidden">
+        <div className="flex flex-row items-center justify-between md:hidden">
           <div className="flex items-center w-1/2">
-            <button onClick={() =>setOpenVectorFilter(false)}>
-              <MdClose size={22} />
-            </button>
-            &nbsp;&nbsp;
+            <MdClose onClick={() =>setOpenVectorFilter(false)} className="cursor-pointer" size={22} />
+              &nbsp;&nbsp;
             <span className="text-lg">Fliter</span>
           </div>
           <div className="flex justify-end items-end w-1/2">
-            <button onClick={handleClearAll} className="border hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
+            <Button color="red" variant={"outline"} onClick={handleClearAll} className="border hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
               Clear All
-            </button>
+            </Button>
           </div>
         </div>
         <div className="flex justify-start w-full px-2 flex-col gap-2 py-3">
