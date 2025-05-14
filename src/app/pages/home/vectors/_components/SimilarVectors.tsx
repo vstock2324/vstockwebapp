@@ -102,11 +102,11 @@ const SimilarVectors = () => {
            <ResponsiveMasonry 
         columnsCountBreakPoints={{
           384: 1,
-          640: 2,
-          768: 3,
-          1024: 4,
-          1280: 5,
-          1536: 6,
+          640: 1,
+          768: 1,
+          1024: 2,
+          1280: 3,
+          1536: 4,
         }}
       >
         <Masonry gutter="30px" columnsCount={6}>

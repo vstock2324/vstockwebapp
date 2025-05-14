@@ -44,7 +44,7 @@ const VectorModal = () => {
         <VectorModalPreviousBtn />
         <VectorModalCloseButton />
         <ModalBody>
-          <div className="m-0.5  flex flex-col">
+          <div className="m-0.5  flex flex-col font-primary">
             <div className=" m-0.5  justify-start items-start flex flex-col  lg:flex-row">
               <div className="relative  m-0.5   flex flex-col items-center justify-center  w-full  lg:w-[60%] xl:w-[65%]">
                 <Link className="cursor-pointer" href={"/"}>
@@ -66,20 +66,20 @@ const VectorModal = () => {
               </div>
               <div className="relative hidden lg:flex lg:flex-col lg:items-start lg:justify-between m-0.5 lg:h-auto lg:w-[40%] xl:w-[35%] xl:h-[425px] 2xl:h-[450px]">
                 <div className=" m-0.5 p-1 flex flex-row items-center justify-start ">
-                  <h3 className="text-lg font-bold text-black">Name</h3>
+                  <h3 className="text-lg font-bold text-black font-primary">Name</h3>
                   &nbsp;&nbsp;
-                  <span className="text-sm font-normal text-wrap text-black">
+                  <span className="text-sm font-normal text-wrap text-black font-primary">
                     {selectedVector.name}
                   </span>
                 </div>
                 <div className=" m-0.5 p-1 ">
-                  <h3 className="text-lg font-bold text-black">Description</h3>
-                  <p className="text-sm font-normal text-wrap text-black">
+                  <h3 className="text-lg font-primary font-bold text-black">Description</h3>
+                  <p className="text-sm font-normal  font-primary text-wrap text-black">
                     {selectedVector.description}
                   </p>
                 </div>
                 <div className="m-0.5 w-full p-1 h-auto hidden lg:flex lg:flex-col items-center space-y-1">
-                  <p className="text-base font-semibold text-black  m-0.5 p-1">
+                  <p className="text-base font-semibold text-black font-primary  m-0.5 p-1">
                     Download or edit in your computer as
                   </p>
 
@@ -94,13 +94,13 @@ const VectorModal = () => {
                   <div className="flex flex-row items-center w-full justify-around m-0.5 p-1">
                     <button
                       onClick={() => router.push("/")}
-                      className="rounded-full text-center cursor-pointer text-nowrap p-2 text-base w-1/2 text-white m-0.5 bg-[#0B85AC]"
+                      className="rounded-full font-primary text-center cursor-pointer text-nowrap p-2 text-base w-1/2 text-white m-0.5 bg-[#0B85AC]"
                     >
                       Edit Online
                     </button>
                     <button
                       onClick={() => router.push("/")}
-                      className="rounded-full text-center  cursor-pointer p-2 text-base w-1/2 text-white text-nowrap m-0.5 bg-[#0B85AC]"
+                      className="rounded-full text-center font-primary  cursor-pointer p-2 text-base w-1/2 text-white text-nowrap m-0.5 bg-[#0B85AC]"
                     >
                       Edit Animation
                     </button>

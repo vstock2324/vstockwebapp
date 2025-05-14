@@ -32,7 +32,7 @@ const RelatedTag = () => {
     <>
       <div className=" m-0.5 flex flex-col">
         <div className=" m-0.5 ">
-          <h6 className="text-[14px] m-0.5  font-semibold ">Related Tags</h6>
+          <h6 className="text-[14px] m-0.5  font-semibold font-primary ">Related Tags</h6>
           <div className="flex flex-row items-center justify-start gap-2 md:gap-4 flex-wrap">
             {tags &&
               // eslint-disable-next-line @typescript-eslint/no-explicit-any

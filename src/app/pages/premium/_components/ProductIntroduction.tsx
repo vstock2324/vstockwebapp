@@ -4,7 +4,7 @@ import MonthlyYearlyBtn from "./MonthlyYearlyBtn";
 
 const ProductIntroduction = () => {
   return (
-    <main className="container mx-auto py-16 px-8">
+    <main className="container mx-auto py-16 px-8 font-primary">
       <div className="m-0.5 p-0.5 flex flex-col items-center justify-between space-y-6">
         <div className=" w-full pt-2  m-0.5 p-0.5">
           <h2 className="text-3xl sm:text-4xl md:text-5xl not-italic font-poppins400 leading-[48px] text-center">

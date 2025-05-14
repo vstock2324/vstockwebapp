@@ -61,7 +61,7 @@ const OrientationHorizontalBtn=()=> {
           searchParams.get("orientation") === "horizontal" || hover
             ? "text-white"
             : "text-black"
-        )} text-base hover:text-white hover:border-white `}
+        )} text-base font-primary hover:text-white hover:border-white `}
       >
         Horizontal
       </h4>&nbsp;

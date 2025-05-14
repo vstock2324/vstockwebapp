@@ -16,7 +16,7 @@ const BreadCrumbsHome = () => {
   const arr = new Array(pathName.length);
   return (
     <div className="hidden w-full lg:flex lg:flex-row items-center justify-start text-[16px]  font-semibold">
-      <div className="flex flex-row  items-center justify-center space-x-2">
+      <div className="flex flex-row  items-center justify-center space-x-2 font-primary">
         {pathName.map((item: string) => {
           arr.push(item);
           if (item === "home") {

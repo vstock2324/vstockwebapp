@@ -54,7 +54,7 @@ const OrientationSquareBtn=()=> {
                         : "bg-white  border"
                     } flex cursor-pointer hover:text-white items-center hover:border-none hover:bg-[#2E67DD] p-1 border-black border w-fit rounded-lg`}
                   >
-                    <h4 className={`${String(searchParams.get("orientation")) === "square" || hover  ? "text-white":"text-black"} text-base hover:text-white hover:border-white `}>Square</h4>&nbsp;
+                    <h4 className={`${String(searchParams.get("orientation")) === "square" || hover  ? "text-white":"text-black"} text-base hover:text-white hover:border-white  font-primary`}>Square</h4>&nbsp;
                     <LuSquare className="hover:text-white" color={`${String(searchParams.get("orientation")) === "square" || hover ? "white": "black"}`} size={18} />
                   </button>
   )

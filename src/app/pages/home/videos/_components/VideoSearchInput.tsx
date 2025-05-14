@@ -9,7 +9,7 @@ import { nanoid } from "nanoid";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { PiMagnifyingGlass } from "react-icons/pi";
 
-const HomeSearchInput = () => {
+const VideoSearchInput = () => {
   const supabase = createClient();
   const [items, setItems] = useState<unknown[]>([]);
   const [isSearching, setIsSearching] = useState(false);
@@ -18,7 +18,7 @@ const HomeSearchInput = () => {
     if (event.target.value !== "") {
       setIsSearching(true);
       const { data, error } = await supabase
-      .from('vector_details')
+      .from('video_details')
       .select('*')
       .or(`name.ilike.%${event.target.value}%,description.ilike.%${event.target.value}%`)
       .limit(100);
@@ -33,14 +33,13 @@ const HomeSearchInput = () => {
   return (
     <>
       <div className="h-10 mx-auto font-primary" />
-     <div className="relative m-1 p-1 min-w-[300px] sm:min-w-[400px] w-[76%] xl:max-w-[800px] 2xl:max-w-[1000px] inline-flex flex-row items-center justify-center">
+       <div className="relative m-1 p-1 min-w-[280px]  w-[76%] xl:max-w-[800px] 2xl:max-w-[1000px] flex flex-row items-center justify-center">
         <input
           type="text"
-          placeholder={"Search for anything"}
+          placeholder={"Videos"}
           onChange={handleSearch}
-          className="rounded-[77px]  bg-[#5885E4]  text-white text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins400   font-poppins400  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
+          className="rounded-[77px]  bg-[#5885E4]  text-white text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins font-poppins  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
         />
-
         {isSearching ? (
           <BiLoaderCircle
             color="white"
@@ -48,9 +47,9 @@ const HomeSearchInput = () => {
             size={30}
           />
         ) : (
-          <button className="absolute right-8">
+          <button className="absolute right-4 sm:right-8">
             <svg
-              className="w-[30px] h-[30px]"
+              className="w-[25px] h-[25px]  sm:w-[30px] sm:h-[30px]"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"
@@ -73,16 +72,16 @@ const HomeSearchInput = () => {
             items.map((item:any) => {
               {
                 return (
-                             <div className="p-1 flex flex-row items-center justify-between hover:bg-gray-200 " key={nanoid().toString()}>
-                               <Link
-                                 href={`/pages/home/vectors?id=${item.vector_id}`}
-                                 className="flex flex-row visited:text-gray-600 items-center justify-start space-x-1 w-full cursor-pointer py-1 px-2"
-                               >
-                                 <PiMagnifyingGlass size={14} />
-                                 <span className="text-black text-center text-[14px]">{item.name}</span>
-                               </Link>
-                               <MdOutlineArrowOutward  size={14}/>
-                             </div>
+                  <div className="p-1 flex flex-row items-center justify-between hover:bg-gray-200 " key={nanoid().toString()}>
+                    <Link
+                      href={`/pages/home/videos/${item.video_id}`}
+                      className="flex flex-row visited:text-gray-600 items-center justify-start space-x-1 w-full cursor-pointer py-1 px-2"
+                    >
+                      <PiMagnifyingGlass size={14} />
+                      <span className="text-black text-center text-[14px]">{item.name}</span>
+                    </Link>
+                    <MdOutlineArrowOutward  size={14}/>
+                  </div>
                 );
               }
             })}
@@ -95,4 +94,4 @@ const HomeSearchInput = () => {
   );
 };
 
-export default memo(HomeSearchInput);
+export default memo(VideoSearchInput);

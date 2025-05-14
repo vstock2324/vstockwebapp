@@ -64,7 +64,7 @@ const MonthlyYearlyBtn = () => {
 
   return (
     <>
-      <div className=" w-full m-0.5 p-0.5">
+      <div className=" w-full m-0.5 p-0.5 font-primary">
         <div className=" m-0.5 p-0.5 flex flex-col items-center justify-center ">
           <div className="flex-shrink-0 rounded-[66.32px] bg-[#2E67DD] gap-1 p-1 inline-flex flex-row justify-between items-center">
             <button

@@ -17,18 +17,18 @@ const PriceCardLoginAlertBtn=({title}:{title:string})=>{
 const router=useRouter();
    return (<AlertDialog>
     <AlertDialogTrigger asChild>
-      <button className="text-black cursor-pointer capitalize  stroke-[#E7E9F1] text-center bg-white rounded-[48px] px-[30px] py-[18px] border border-[#E7E9F1] hover:border-none font-roboto500 text-[19px] hover:text-[#FEFEFE] hover:bg-[#3580F0]">
+      <button className="text-black font-primary cursor-pointer capitalize  stroke-[#E7E9F1] text-center bg-white rounded-[48px] px-[30px] py-[18px] border border-[#E7E9F1] hover:border-none font-roboto500 text-[19px] hover:text-[#FEFEFE] hover:bg-[#3580F0]">
         {title}
       </button>
     </AlertDialogTrigger>
-    <AlertDialogContent className="bg-white">
-      <AlertDialogHeader>
+    <AlertDialogContent className="bg-white font-primary">
+      <AlertDialogHeader className="font-primary">
         <AlertDialogTitle>Login</AlertDialogTitle>
         <AlertDialogDescription>
           You are not logged in ,Login in first
         </AlertDialogDescription>
       </AlertDialogHeader>
-      <AlertDialogFooter>
+      <AlertDialogFooter className="font-primary">
         <AlertDialogCancel className="text-[#2E67DD] cursor-pointer">
           Cancel
         </AlertDialogCancel>

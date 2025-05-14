@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const EditOwn = () => {
   return (
-    <div className="bg-[#F1F4FC] w-full h-auto mx-auto flex flex-row items-center justify-center">
+    <div className="bg-[#F1F4FC] w-full h-auto mx-auto flex flex-row items-center justify-center font-primary">
   <div className=" mt-4 sm:mt-0 mx-auto xl:m-4 container w-full flex flex-row items-center justify-center ">
     <div className="flex flex-col w-full 2xl:max-w-[1440px] lg:flex-row xl:flex-row justify-around items-center p-2 sm:p-5">
       <div className="lg:mb-0">

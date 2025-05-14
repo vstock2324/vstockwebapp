@@ -7,7 +7,7 @@ import SearchTags0 from "./SearchTags0";
 const HomeSearchBar = () => {
   return (
     <>
-      <div className=" flex flex-col items-center justify-center p-1 ">
+      <div className=" flex flex-col items-center justify-center p-1  font-primary">
         <HomeSearchInput />
         <SearchTags0/>
         <SearchTags1/>

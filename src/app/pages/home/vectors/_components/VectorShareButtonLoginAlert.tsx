@@ -20,7 +20,7 @@ const VectorShareButton=()=> {
    <AlertDialog>
    <AlertDialogTrigger asChild>
    <button className="cursor-pointer p-2 flex-grow space-x-2 rounded-md  flex flex-row items-center justify-center bg-[#F3F3F3] flex-nowrap">
-    <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap">
+    <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap font-primary">
       Share Vector
     </h4>
     <PiShare fill={"black"} size={20} />
@@ -28,20 +28,20 @@ const VectorShareButton=()=> {
    </AlertDialogTrigger>
    <AlertDialogContent className="bg-white">
  <AlertDialogHeader>
-   <AlertDialogTitle>Login</AlertDialogTitle>
-   <AlertDialogDescription>
+   <AlertDialogTitle className='font-primary'>Login</AlertDialogTitle>
+   <AlertDialogDescription className='font-primary'>
      You are not logged in ,Login in first
    </AlertDialogDescription>
  </AlertDialogHeader>
  <AlertDialogFooter>
-   <AlertDialogCancel className="text-[#2E67DD] cursor-pointer">
+   <AlertDialogCancel className="text-[#2E67DD] font-primary cursor-pointer">
      Cancel
    </AlertDialogCancel>
    <AlertDialogAction
      onClick={() =>
        router.push("/pages/login", { scroll: true })
      }
-     className="bg-[#2E67DD] text-white cursor-pointer"
+     className="bg-[#2E67DD] text-white cursor-pointer font-primary"
    >
      Log In
    </AlertDialogAction>

@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { ThemeConfig } from "flowbite-react";
 import { ThemeModeScript } from "flowbite-react";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+const open_sans=Open_Sans({
+  variable:"--font-open-sans",
+  subsets:["latin"],
+  weight:["400","700"]
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,11 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      
         <head>
           <ThemeModeScript />
         </head>
-        <body className={`${poppins.variable}  antialiased`}>
+        <body className={`${open_sans.variable}  antialiased`}>
           <ThemeConfig dark={false} />
             {children}
         </body>

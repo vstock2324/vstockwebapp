@@ -10,7 +10,7 @@ const TagButton = ({ tag }: { tag: string }) => {
         href={"/"}
         className="rounded-full border-2 border-black bg-[#EDEDED] flex flex-row justify-center items-center space-x-1 px-2  py-0.5"
       >
-        <span className="md:text-[12px] text-nowrap text-[10px]">{tag}</span>
+        <span className="md:text-[12px] text-nowrap text-[10px] font-primary">{tag}</span>
         <HiOutlineMagnifyingGlass size={14} />
       </Link>
     </>

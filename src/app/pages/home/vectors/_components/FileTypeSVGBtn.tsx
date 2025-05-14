@@ -22,7 +22,7 @@ const FileTypeSVGBtn=()=> {
       sp.get("format") === "svg"
         ? "bg-[#2E67DD] text-white border-none"
         : "bg-white text-black"
-    } cursor-pointer hover:text-white hover:border-white hover:bg-[#2E67DD] border rounded-lg p-1 border-black`}
+    } cursor-pointer font-primary hover:text-white hover:border-white hover:bg-[#2E67DD] border rounded-lg p-1 border-black`}
   >
     SVG
   </button>

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className={`bg-[#2E67DD] shadow-headershadow   h-auto`}>
+    <div className={`bg-[#2E67DD]  font-primary   h-auto`}>
       <footer className=" container mx-auto">
         <div className="flex flex-col justify-center items-center py-8">
           <div className=" cursor-pointer">
@@ -26,19 +26,19 @@ const Footer = () => {
             of design - yes, no, and WOW!
           </p>
           <div className="font-normal py-2 sm:py-4 text-white flex flex-col md:flex-row items-center  space-y-4 md:space-y-0  sm:font-medium  md:space-x-6 lg:space-x-12 justify-between">
-            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px]  hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
+            <span className="text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px]  hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               Privacy Policy
             </span>
-            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer   ">
+            <span className=" text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer   ">
               Contact Us
             </span>
-            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
+            <span className=" text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               Terms and conditions
             </span>
-            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
+            <span className=" text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               About
             </span>
-            <span className="font-poppins text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
+            <span className=" text-[10px] sm:text-[12px] md:text-[14px] lg:-text-[16px] xl:text-[18px] 2xl:[text-20px] hover:font-bold hover:transition-all duration-100 hover:brightness-200 cursor-pointer  ">
               FAQs
             </span>
           </div>

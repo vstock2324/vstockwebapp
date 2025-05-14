@@ -23,7 +23,7 @@ const LicenseFreeBtn=()=>{
                  String(searchParams.get("license")) === "free"
                     ? "bg-[#2E67DD] text-white border-none"
                     : "bg-white text-black"
-                } border cursor-pointer   hover:text-white hover:border-white hover:bg-[#2E67DD] border-black px-2 py-1 rounded-lg`}
+                } border cursor-pointer font-primary   hover:text-white hover:border-white hover:bg-[#2E67DD] border-black px-2 py-1 rounded-lg`}
               >
                 Free
               </button>);

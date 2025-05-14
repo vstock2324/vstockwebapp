@@ -26,7 +26,7 @@ const CategoryIllustrationsLink = async () => {
         <img
           // width={250}
           // height={142}
-          className="w-[250px] h-[142px] object-fill bg-cover bg-[#D9D9D9] opacity-30  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
+          className="w-[250px] h-[142px] object-fill bg-cover bg-[#D9D9D9] opacity-70  bg-no-repeat rounded-[30px] border border-solid border-[#FFF]"
           // src="../../images/ne1.svg"
           src={publicUrl || "../../images/ne1.svg"}
           alt="Illustrations"

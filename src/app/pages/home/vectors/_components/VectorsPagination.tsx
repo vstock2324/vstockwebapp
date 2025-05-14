@@ -20,7 +20,7 @@ const VectorsPagination = () => {
   
   return (
     <>
-      <div className="py-10">
+      <div className="py-10 font-primary">
         <Pagination className="cursor-pointer">
           {totalPages > 4 ? (
             <>

@@ -66,7 +66,7 @@ const LicensePremiumBtn = () => {
           searchParams.get("license") === "premium" || hover
             ? "text-white"
             : "text-black"
-        )} text-base hover:text-white hover:border-white `}
+        )} text-base hover:text-white font-primary hover:border-white `}
       >
         Premium
       </h1>

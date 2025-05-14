@@ -59,7 +59,7 @@ const OrientationVerticalBtn = () => {
           searchParams.get("orientation") === "vertical" || hover
             ? "text-white"
             : "text-black"
-        )} text-base hover:text-white hover:border-white `}
+        )} text-base hover:text-white hover:border-white font-primary `}
       >
         Vertical
       </h4>

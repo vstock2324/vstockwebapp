@@ -73,7 +73,7 @@ const VectorSVGDownloadLink = () => {
           <button
             className={`bg-[#0BAC6F]  ${
               loading ? "cursor-progress" : "cursor-pointer"
-            } flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white disabled:text-white/30`}
+            } flex-nowrap font-primary text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white disabled:text-white/30`}
             onClick={handleSVGDownload}
             disabled={loading}
           >

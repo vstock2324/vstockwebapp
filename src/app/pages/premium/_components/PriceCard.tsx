@@ -29,7 +29,7 @@ const PriceCard = ({ props }: { props: PriceCardType }) => {
   }
   return (
     <>
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 font-primary">
         <div
           className={`relative px-6 py-9 sm:px-8 sm:py-12 border shadow-sm  focus:border-solid rounded-[21.21px] bg-[#FDFDFE] w-[280px] sm:max-w-[330px] h-[500px]  hover:border-[#5E5CEE]  m-0.5 flex flex-col items-center justify-between`}
         >

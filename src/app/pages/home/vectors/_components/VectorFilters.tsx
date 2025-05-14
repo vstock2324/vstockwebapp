@@ -41,10 +41,10 @@ const VectorFilters=()=>{
           <div className="flex items-center w-1/2">
             <MdClose onClick={() =>setOpenVectorFilter(false)} className="cursor-pointer" size={22} />
               &nbsp;&nbsp;
-            <span className="text-lg">Fliter</span>
+            <span className="text-lg font-primary">Fliter</span>
           </div>
           <div className="flex justify-end items-end w-1/2">
-            <Button color="red" variant={"outline"} onClick={handleClearAll} className="border hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
+            <Button  variant={"destructive"} onClick={handleClearAll} className="border font-primary hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
               Clear All
             </Button>
           </div>
@@ -52,7 +52,7 @@ const VectorFilters=()=>{
         <div className="flex justify-start w-full px-2 flex-col gap-2 py-3">
           <div className="flex p-1 items-center">
             <FaCrown color="black" size={22} />
-            &nbsp;&nbsp;<span className=" text-black text-lg font-semibold">License</span>
+            &nbsp;&nbsp;<span className=" text-black text-lg font-semibold font-primary">License</span>
           </div>
           <div className="flex gap-4">
       <LicenseFreeBtn/>
@@ -63,7 +63,7 @@ const VectorFilters=()=>{
           <div className="flex items-center">
             <TbFileOrientation color="black" size={18}/>
             &nbsp;&nbsp;
-            <span className="text-lg text-black font-semibold">Orientation</span>
+            <span className="text-lg text-black font-semibold font-primary">Orientation</span>
           </div>
           <div className="flex flex-col gap-2">
            <OrientationHorizontalBtn/>
@@ -76,7 +76,7 @@ const VectorFilters=()=>{
         <div className="flex flex-col w-full justify-start px-2 py-3 gap-2">
           <div className="flex items-center justify-start p-1">
             <CiFileOn color="black" size={18} />
-            &nbsp;&nbsp;<h4 className="text-lg text-black font-semibold">File Type</h4>
+            &nbsp;&nbsp;<h4 className="text-lg text-black font-semibold font-primary">File Type</h4>
           </div>
           <div className="grid grid-cols-2 gap-2">
              <FileTypeVectorBtn/>
@@ -88,7 +88,7 @@ const VectorFilters=()=>{
         <div className="flex flex-col w-full px-2 py-3 gap-2">
           <div className="flex items-center justify-start p-1">
             <IoColorPaletteOutline color="black" size={18} />
-            &nbsp;&nbsp;<h4 className="text-lg text-black font-semibold">Colors</h4>
+            &nbsp;&nbsp;<h4 className="text-lg text-black font-semibold font-primary">Colors</h4>
           </div>
           <div className="grid grid-cols-6 gap-2 justify-center items-center">
             <button className="w-6 h-6 cursor-pointer bg-red-600 flex justify-center items-center rounded-full"></button>

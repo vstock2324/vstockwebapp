@@ -31,7 +31,7 @@ const SortBy = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="flex flex-row items-center justify-center space-x-2 border-none focus:outline-none">
-          <label className="text-[20px] font-normal not-italic text-center">
+          <label className="text-[20px] font-normal not-italic text-center font-primary">
             Sort By
           </label>
           <MdKeyboardArrowDown
@@ -42,24 +42,24 @@ const SortBy = () => {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 bg-white">
-        <DropdownMenuLabel>Sort By</DropdownMenuLabel>
+        <DropdownMenuLabel className="font-primary">Sort By</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={sortBy} onValueChange={setSortBy}>
-          <DropdownMenuRadioItem  className=" cursor-pointer" value="alpha">
+          <DropdownMenuRadioItem  className="font-primary cursor-pointer" value="alpha">
             <BsSortAlphaDown size={16} />
             Alphabetically
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className=" cursor-pointer" value="ralpha">
+          <DropdownMenuRadioItem className=" font-primary cursor-pointer" value="ralpha">
             <BsSortAlphaDownAlt size={16} />
             Alphabetically
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className=" cursor-pointer" value="likes">
+          <DropdownMenuRadioItem className="font-primary cursor-pointer" value="likes">
             Most Popular
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className=" cursor-pointer" value="created_at">
+          <DropdownMenuRadioItem className="font-primary cursor-pointer" value="created_at">
             Date
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className=" cursor-pointer" value="relevance">
+          <DropdownMenuRadioItem className="font-primary cursor-pointer" value="relevance">
             Most Relevant
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>

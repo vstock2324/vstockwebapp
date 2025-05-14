@@ -250,7 +250,7 @@ const VectorLikeButton = () => {
             type="button"
             className=" cursor-pointer p-2 flex-grow space-x-2 rounded-md  flex flex-row items-center justify-center bg-[#F3F3F3]"
           >
-            <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap">
+            <h4 className="xl:text-lg lg:text-base text-black font-medium text-nowrap font-primary">
               Add to Likes
             </h4>
             <FaHeart fill={like ? "red" : "black"} size={20} />

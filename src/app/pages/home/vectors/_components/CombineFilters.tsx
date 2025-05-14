@@ -16,7 +16,7 @@ const CombineFilters = () => {
             <BsSliders fill={"black"} size={20} />
           </span>
           <span className="font-semibold p-1 inline-flex flex-row items-center justify-between cursor-pointer">
-            <h3 className=" text-black font-poppins600 text-[20px] font-medium not-italic text-center">
+            <h3 className=" text-black  text-[20px] font-primary font-medium not-italic text-center">
               Filters
             </h3>
 

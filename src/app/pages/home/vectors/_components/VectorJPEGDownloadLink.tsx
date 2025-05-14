@@ -73,7 +73,7 @@ const VectorJPEGDownloadLink = () => {
           <button
             className={`bg-[#0BAC6F]  ${
               loading ? "cursor-progress" : "cursor-pointer"
-            } flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
+            } font-primary flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
             onClick={handleJPEGDownload}
             disabled={loading}
           >

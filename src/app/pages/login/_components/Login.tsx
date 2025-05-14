@@ -16,7 +16,7 @@ const Login = () => {
   const router = useRouter();
   // const pathname=usePathname();
   return (
-    <div className="flex flex-col  items-center justify-between w-full lg:w-[60%] p-1">
+    <div className="flex flex-col  items-center justify-between w-full lg:w-[60%] p-1 font-primary">
       <div className="mb-[40px] gap-y-4 px-1 flex flex-col items-center justify-start w-full lg:w-3/5">
         <div className="">
           <h1 className=" font-poppins600 not-italic  text-[30px]  lg:text-[40px] text-center  font-bold text-[#2E67DD]">

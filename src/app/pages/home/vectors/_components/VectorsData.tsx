@@ -13,24 +13,18 @@ const VectorsData = () => {
   return (
           <ResponsiveMasonry 
         columnsCountBreakPoints={ openVectorFilter ?  {
-        384: 1,
-          512: 2,
-          640: 3,
-          768: 4,
-          1024: 4,
-          1280: 5,
-          1536: 6,
+           320: 1,
+           896: 2,
+           1536: 3,
+           1920:4
         }  : {
-          384: 1,
-          512: 2,
-          640: 3,
-          768: 4,
-          1024: 5,
-          1280: 6,
-          1536: 7,
+          320: 1,
+          896: 2,
+          1280: 3,
+          1664: 4,
         }  }
       >
-        <Masonry columnsCount={ openVectorFilter ? 6 : 7}>
+        <Masonry columnsCount={ openVectorFilter ? 4 : 4}>
       {/* {vectors &&
         (vectors.length > 0 ? (
           // eslint-disable-next-line @typescript-eslint/no-explicit-any

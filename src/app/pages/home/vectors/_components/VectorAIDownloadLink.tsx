@@ -73,7 +73,7 @@ const VectorAIDownloadLink = () => {
           <button
             className={`bg-[#0BAC6F]  ${
               loading ? "cursor-progress" : "cursor-pointer"
-            } flex flex-row items-center flex-nowrap text-nowrap justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
+            } flex flex-row font-primary items-center flex-nowrap text-nowrap justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
             onClick={handleAIDownload}
             disabled={loading}
           >

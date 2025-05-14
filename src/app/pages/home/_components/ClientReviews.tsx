@@ -32,7 +32,7 @@ const clients = [
 const ClientReview = () => {
   return (
     <>
-      <div className="mt-20 mb-[100.61px] bg-[#FEFAFF] ">
+      <div className="mt-20 mb-[100.61px] bg-[#FEFAFF] font-primary">
         <div className="flex flex-col items-center justify-center ">
           <div className="text-center flex flex-col justify-center items-center">
             <h1 className="text-[#2E67DD] text-[20px] tracking-widest font-roman font-bold leading-  text-center">

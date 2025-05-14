@@ -32,8 +32,8 @@ const VectorsSearchInput = () => {
 
   return (
     <>
-      <div className="h-10 mx-auto" />
-       <div className="relative m-1 p-1 min-w-[280px]  w-[76%] max-w-[1000px] flex flex-row items-center justify-center">
+      <div className="h-10 mx-auto font-primary" />
+       <div className="relative m-1 p-1 min-w-[280px]  w-[76%] xl:max-w-[800px] 2xl:max-w-[1000px] flex flex-row items-center justify-center">
         <input
           type="text"
           placeholder={"Vectors"}

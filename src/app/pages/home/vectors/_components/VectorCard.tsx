@@ -28,8 +28,8 @@ const VectorCard = ({ card }:{card:any}) => {
             loading="lazy"
             alt=""
             src={publicUrl}
-            width={200}
-            height={200}
+            width={400}
+            height={400}
           />);
 };
 

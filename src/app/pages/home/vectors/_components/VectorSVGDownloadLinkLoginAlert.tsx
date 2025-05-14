@@ -25,7 +25,7 @@ const VectorSVGDownloadLinkLoginAlert = () => {
         <AlertDialogTrigger asChild>
           <button
             className={`bg-[#0BAC6F] 
-          cursor-pointer
+          cursor-pointer font-primary
         flex-nowrap text-nowrap flex flex-row items-center justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white disabled:text-white/30`}
           >
             SVG&nbsp;
@@ -34,18 +34,18 @@ const VectorSVGDownloadLinkLoginAlert = () => {
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-white">
           <AlertDialogHeader>
-            <AlertDialogTitle>Login</AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogTitle className="font-primary">Login</AlertDialogTitle>
+            <AlertDialogDescription className="font-primary">
               You are not logged in ,Login in first
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="text-[#2E67DD] cursor-pointer">
+            <AlertDialogCancel className="text-[#2E67DD] font-primary cursor-pointer">
               Cancel
             </AlertDialogCancel>
             <AlertDialogAction
               onClick={() => router.push("/pages/login", { scroll: true })}
-              className="bg-[#2E67DD] text-white cursor-pointer"
+              className="bg-[#2E67DD] text-white cursor-pointer font-primary"
             >
               Log In
             </AlertDialogAction>

@@ -31,8 +31,8 @@ const SimilarVectorCard=({props}:{props:SimilarVectorCardPropsType})=>{
         <Image
         onClick={handleClickSimilarVector}
            className="hover:border-gray-200 aspect-auto  hover:shadow-xl hover:shadow-gray-400 rounded-md cursor-pointer mx-auto"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             src={publicUrl}
             alt="Similar Vector Card"
             />

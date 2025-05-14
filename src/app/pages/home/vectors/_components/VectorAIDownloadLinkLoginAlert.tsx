@@ -23,7 +23,7 @@ const VectorAIDownloadLinkLoginAlert = () => {
         <AlertDialogTrigger asChild>
         <button
         className={`bg-[#0BAC6F]  cursor-pointer
-        flex flex-row items-center flex-nowrap text-nowrap justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
+        flex flex-row font-primary items-center flex-nowrap text-nowrap justify-center w-[30%] p-1 rounded-full text-lg font-normal text-white`}
       >
         AI&nbsp;
         <FaArrowDownLong size={13} color="#FFFFFF" />
@@ -31,20 +31,20 @@ const VectorAIDownloadLinkLoginAlert = () => {
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-white">
       <AlertDialogHeader>
-        <AlertDialogTitle>Login</AlertDialogTitle>
-        <AlertDialogDescription>
+        <AlertDialogTitle className="font-primary">Login</AlertDialogTitle>
+        <AlertDialogDescription className="font-primary">
           You are not logged in ,Login in first
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>
-        <AlertDialogCancel className="text-[#2E67DD] cursor-pointer">
+        <AlertDialogCancel className="text-[#2E67DD] cursor-pointer font-primary">
           Cancel
         </AlertDialogCancel>
         <AlertDialogAction
           onClick={() =>
             router.push("/pages/login", { scroll: true })
           }
-          className="bg-[#2E67DD] text-white cursor-pointer"
+          className="bg-[#2E67DD] text-white cursor-pointer font-primary"
         >
           Log In
         </AlertDialogAction>

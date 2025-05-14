@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 const  ClientCard=({name,star,review,picture}:{name:string,star:number,review:string,picture:string})=>{
   
     return <>
-    <div className="border-[1.557px] min-w-[300px] border-solid rounded-[24.905px] py-[20px] sm:py-[31.13px]  px-[5px] sm:px-[18.68px] border-[#2E67DD] sm:m-1 max-w-[345.4875px] h-auto">
+    <div className="border-[1.557px] font-primary min-w-[300px] border-solid rounded-[24.905px] py-[20px] sm:py-[31.13px]  px-[5px] sm:px-[18.68px] border-[#2E67DD] sm:m-1 max-w-[345.4875px] h-auto">
         <div className=" m-0.5 sm:m-1 flex flex-col gap-y-3">
           <div className=" m-0.5 sm:m-1 p-1 flex items-center justify-center">
                 <Image className="rounded-full" alt="" width={133} height={133} src={picture} />

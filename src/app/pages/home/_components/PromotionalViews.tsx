@@ -4,7 +4,7 @@ import { memo } from "react";
 
 const PromotionalViews = () => {
   return (
-    <div className="   ">
+    <div className="font-primary">
       <div className="container mx-[5px] sm:mx-auto  mt-[20px] ">
         <div className="  xl:m-[100px]  ">
           <div className="flex flex-col lg:flex-row xl:flex-row justify-around items-center  ">

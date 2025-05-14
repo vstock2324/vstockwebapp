@@ -26,7 +26,7 @@ const LoggedInUser = ({
   return (
     <div
       className="flex flex-row items-center  justify-center space-x-0.25 sm:space-x-0.5
-    md:space-x-1 lg:space-x-2"
+    md:space-x-1 lg:space-x-2 font-primary"
     >
       <span className="hidden md:flex text-[14px] font-bold">{name}</span>
       <div className="flex flex-row items-center justify-center space-x-0.5 flex-nowrap">
