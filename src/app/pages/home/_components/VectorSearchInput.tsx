@@ -33,12 +33,12 @@ const VectorsSearchInput = () => {
   return (
     <>
       <div className="h-10 mx-auto" />
-       <div className="relative m-1 p-1 min-w-[330px]  w-[76%] max-w-[1000px] flex flex-row items-center justify-center">
+       <div className="relative m-1 p-1 min-w-[280px]  w-[76%] max-w-[1000px] flex flex-row items-center justify-center">
         <input
           type="text"
           placeholder={"Vectors"}
           onChange={handleSearch}
-          className="rounded-[77px]  bg-[#5885E4]  text-white text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins400   font-poppins400  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
+          className="rounded-[77px]  bg-[#5885E4]  text-white text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins400   font-poppins400  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
         />
         {isSearching ? (
           <BiLoaderCircle
@@ -47,9 +47,9 @@ const VectorsSearchInput = () => {
             size={30}
           />
         ) : (
-          <button className="absolute right-8">
+          <button className="absolute right-4 sm:right-8">
             <svg
-              className="w-[30px] h-[30px]"
+              className="w-[25px] h-[25px]  sm:w-[30px] sm:h-[30px]"
               xmlns="http://www.w3.org/2000/svg"
               width="30"
               height="30"

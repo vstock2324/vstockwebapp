@@ -10,6 +10,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Link from "next/link";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const LoggedInUser = ({
   userId,
@@ -28,18 +29,19 @@ const LoggedInUser = ({
     md:space-x-1 lg:space-x-2"
     >
       <span className="hidden md:flex text-[14px] font-bold">{name}</span>
-      <div className="">
-        <Popover>
-          <PopoverTrigger>
-            <Image
+      <div className="flex flex-row items-center justify-center space-x-0.5 flex-nowrap">
+          <Image
               src={picture_url || `/images/admin.png`}
               alt={"User Picture"}
               width={35}
               height={35}
               className="rounded-full cursor-pointer"
             />
+        <Popover>
+          <PopoverTrigger>
+            <RiArrowDropDownLine className="cursor-pointer" size={30}/>
           </PopoverTrigger>
-          <PopoverContent className="bg-white border-none  lg:w-56 xl:w-60 2xl:w-64">
+          <PopoverContent className="bg-white border-none  lg:w-48 xl:w-52 2xl:w-56">
             <form
               action={signout}
               className="flex flex-col items-start justify-start"

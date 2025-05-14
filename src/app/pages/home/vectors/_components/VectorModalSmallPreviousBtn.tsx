@@ -14,7 +14,7 @@ const VectorModalSmallPreviousBtn = () => {
     }
   }
   return (
-    <button onClick={handleModalPrevClick}  className={`${ vectors.indexOf(selectedVector)===0 ? "md:hidden":"flex"  } absolute  flex md:hidden p-2 cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[7%] left-2/5   -translate-x-4/5`}>
+    <button onClick={handleModalPrevClick}  className={`${ vectors.indexOf(selectedVector)===0 ? "md:hidden":"flex"  } absolute  flex md:hidden p-2 cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[8.5%] left-2/5   -translate-x-4/5`}>
       <FaChevronLeft className={`${vectors.indexOf(selectedVector)===0 ? "hidden":"flex"}`} size={24} fill="#EEE" />
     </button>
   );

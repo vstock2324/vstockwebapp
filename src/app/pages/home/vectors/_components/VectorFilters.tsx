@@ -15,25 +15,37 @@ import FileTypeJPEGBtn from "./FileTypeJPEGBtn";
 import FileTypeSVGBtn from "./FileTypeSVGBtn";
 import FileTypeVectorBtn from "./FileTypeVectorBtn";
 import FileTypeAIBtn from "./FileTypeAIBtn";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 const VectorFilters=()=>{
-  const {openVectorFilter} = useVectorFilter();
+  const {openVectorFilter,setOpenVectorFilter} = useVectorFilter();
+  const pathname= usePathname();
+  const searchParams=useSearchParams();
+  const sp=new URLSearchParams(searchParams);
+  const router=useRouter();
+  function handleClearAll(){
+  sp.delete("license");
+  sp.delete("orientation");
+  sp.delete("format");
+  sp.delete("color");
+  router.push(`${pathname}?${sp.toString()}`, { scroll: false });
+  }
  return (
     <>
       <div
-        className={`border rounded-r-xl p-1 left-0 shadow-xl mr-2 top-0 w-full h-full z-10 md:relative md:min-w-[300px] md:max-w-[350px] md:z-0 md:top-0 md:left-0 bg-white flex flex-col ${
+        className={`border rounded-r-xl p-1 left-0 shadow-xl top-0 z-20 absolute  w-[300px]  md:z-0 md:static h-fit bg-white flex flex-col ${
           openVectorFilter === true ? "flex" : "hidden"
         } `}
       >
         <div className="flex flex-row md:hidden">
           <div className="flex items-center w-1/2">
-            <button onClick={() =>{}}>
+            <button onClick={() =>setOpenVectorFilter(false)}>
               <MdClose size={22} />
             </button>
             &nbsp;&nbsp;
             <span className="text-lg">Fliter</span>
           </div>
           <div className="flex justify-end items-end w-1/2">
-            <button className="border hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
+            <button onClick={handleClearAll} className="border hover:text-white hover:border-white hover:bg-[#2E67DD] border-black p-1 rounded-lg">
               Clear All
             </button>
           </div>

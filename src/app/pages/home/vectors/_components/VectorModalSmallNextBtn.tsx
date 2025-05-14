@@ -20,7 +20,7 @@ const VectorModalSmallNextBtn = () => {
       onClick={handleModalNextClick}
       className={` ${
         vectors.indexOf(selectedVector)===vectors.length -1 ? "hidden" : "flex"
-      }   absolute p-2 md:hidden flex cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[7%]  right-2/5  translate-x-4/5`}
+      }   absolute p-2 md:hidden flex cursor-pointer rounded-full bg-none hover:bg-white/25  -bottom-[8.5%]  right-2/5  translate-x-4/5`}
     >
       <FaChevronRight className={`${vectors.indexOf(selectedVector)===vectors.length-1 ? "hidden" : "flex"}`} size={24} fill="#EEE" />
     </button>

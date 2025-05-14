@@ -70,7 +70,7 @@ const BreadCrumbsHome = () => {
                   key={nanoid().toString()}
                 >
                   <Link
-                    className="text-white"
+                    className="text-white font-poppins"
                     href={`/pages/${arr.join("/")}?page=${searchParams.get(
                       "page"
                     )}`}

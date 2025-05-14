@@ -42,7 +42,7 @@ const NavBarLoginButton2 = async () => {
     }
   } else {
     return (
-      <li className="flex flex-row items-center justify-between gap-x-4 pb-1">
+      <li className="flex flex-row items-center justify-between gap-x-4">
             <Link
             className=" flex flex-row items-center justify-center space-x-3 border-white dark:border-white border rounded-full px-3 py-0.5 hover:cursor-pointer text-nowrap"
             href={"/pages/login"}

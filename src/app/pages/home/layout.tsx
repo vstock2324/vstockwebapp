@@ -13,7 +13,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="bg-white">
+    <main className="bg-white relative">
     {children}
     </main>
   );

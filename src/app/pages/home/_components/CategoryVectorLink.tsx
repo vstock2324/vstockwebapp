@@ -18,7 +18,7 @@ const CategoryVectorLink = async () => {
   } = supabase.storage
     .from(`${process.env.NEXT_PUBLIC_SUPABASE_BUCKET_NAME}`)
     .getPublicUrl(`${vectorName}`);
-    console.log(publicUrl);
+    
 
   return (
     <Link href={`/pages/home/vectors?page=1`} prefetch={true}>

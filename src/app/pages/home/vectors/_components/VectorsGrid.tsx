@@ -1,14 +1,16 @@
+"use client";
 import VectorFilters from "./VectorFilters";
-import VectorGridDataWrapper from "./VectorGridDataWrapper";
 import VectorModal from "./VectorModal";
-
 import { memo } from "react";
+import VectorsData from "./VectorsData";
+import useVectorFilter from "@/context/useVectorFilter";
 
 const VectorsGrid = () => {
+  const { openVectorFilter } = useVectorFilter();
   return (
-    <div className="items-start justify-between flex flex-row relative  mx-[30px] lg:mx-[120px] 2xl:mx-auto 2xl:max-w-[1440px]">
+    <div className={`${openVectorFilter ? "md:grid md:grid-cols-[300px_1fr] md:gap-2":""}  mx-[30px] lg:mx-[120px] 2xl:mx-auto 2xl:max-w-[1440px]`}>
       <VectorFilters />
-      <VectorGridDataWrapper />
+      <VectorsData/>
       <VectorModal />
     </div>
   );

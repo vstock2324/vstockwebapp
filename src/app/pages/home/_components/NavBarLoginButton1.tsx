@@ -10,7 +10,7 @@ const NavBarLoginButton1 = async () => {
     data: { user },
   } = await supabase.auth.getUser();
   return (
-    <li className="flex flex-row items-center justify-between gap-x-4 pb-1">
+    <li className="flex flex-row items-center justify-between gap-x-4 ">
       {user ? (
         <LoggedInUser
         userId={user.id}

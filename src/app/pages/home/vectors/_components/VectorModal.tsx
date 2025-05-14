@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import useVectorModal from "@/context/useVectorModal";
@@ -19,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { Bounce, ToastContainer } from "react-toastify";
 import VectorModalSmallPreviousBtn from "./VectorModalSmallPreviousBtn";
 import VectorModalSmallNextBtn from "./VectorModalSmallNextBtn";
+
 
 const VectorModal = () => {
   const {
@@ -46,8 +48,9 @@ const VectorModal = () => {
             <div className=" m-0.5  justify-start items-start flex flex-col  lg:flex-row">
               <div className="relative  m-0.5   flex flex-col items-center justify-center  w-full  lg:w-[60%] xl:w-[65%]">
                 <Link className="cursor-pointer" href={"/"}>
-                  <img
-                    className={`h-[350px] md:h-[375px] lg:h-[400px] xl:h-[425px] 2xl:h-[450px] rounded-md  aspect-auto`}
+                
+                <img
+                    className={`h-[250px] sm:h-[350px] md:h-[375px] lg:h-[400px] xl:h-[425px] 2xl:h-[450px] rounded-md  aspect-auto`}
                     alt=""
                     src={selectedVectorUrl}
                   />
