@@ -57,11 +57,7 @@ const VectorModal = () => {
                 </Link>
                 <div className="absolute inline-block -translate-x-[10%] -translate-y-[15%] top-[2%] right-[1%] items-center justify-center space-y-1 lg:hidden">
                   <FaHeart fill="black" className="cursor-pointer" size={30} />
-                  <PiShareFatFill
-                    fill="black"
-                    className="cursor-pointer"
-                    size={30}
-                  />
+                  <PiShareFatFill fill="black" className="cursor-pointer" size={30}/>
                 </div>
               </div>
               <div className="relative hidden lg:flex lg:flex-col lg:items-start lg:justify-between m-0.5 lg:h-auto lg:w-[40%] xl:w-[35%] xl:h-[425px] 2xl:h-[450px]">

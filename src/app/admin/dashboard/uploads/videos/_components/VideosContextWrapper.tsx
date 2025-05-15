@@ -1,11 +1,14 @@
 "use client";
-import React, { memo } from 'react';
+import React, { memo } from "react";
 import VideosTable from "./VideosTable";
-import {AdminVideosContextProvider} from "@/context/useAdminVideos";
-const VideosContextWrapper=()=>{
+import { AdminVideosContextProvider } from "@/context/useAdminVideos";
+const VideosContextWrapper = () => {
   return (
-    <AdminVideosContextProvider>  <VideosTable/></AdminVideosContextProvider>
-  )
-}
+    <AdminVideosContextProvider>
+      {" "}
+      <VideosTable />
+    </AdminVideosContextProvider>
+  );
+};
 
-export default  memo(VideosContextWrapper);
+export default memo(VideosContextWrapper);

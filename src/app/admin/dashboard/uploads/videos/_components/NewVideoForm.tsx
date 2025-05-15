@@ -20,7 +20,7 @@ const NewVideoForm = () => {
   return (
     <form
       action={action}
-      className="mx-2 my-2 p-4  w-[80%] flex flex-col  gap-4 border-2  rounded-md border-gray-400"
+      className="mx-2 my-2 p-4  w-[80%] flex flex-col  gap-4 border-2 font-primary  rounded-md border-gray-400"
     >
       <div>
         <div className="my-2 block">

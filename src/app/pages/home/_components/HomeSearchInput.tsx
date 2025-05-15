@@ -38,7 +38,7 @@ const HomeSearchInput = () => {
           type="text"
           placeholder={"Search for anything"}
           onChange={handleSearch}
-          className="rounded-[77px]  bg-[#5885E4]  text-white text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-poppins400   font-poppins400  font-extralight placeholder:font-extralight  placeholder:text-white not-italic"
+          className="rounded-[77px]  bg-[#5885E4]  text-white text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] flex-shrink-0  w-full h-12 py-[16px] px-[29px]  outline-none focus:outline-none placeholder:font-primary font-primary font-extralight placeholder:font-extralight  placeholder:text-gray-300 not-italic"
         />
 
         {isSearching ? (

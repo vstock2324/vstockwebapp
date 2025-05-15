@@ -2,7 +2,7 @@ import React from "react";
 import { memo } from "react";
 import PasswordInputWrapper from "./PasswordInputWrapper";
 import { handleAdminLoginFormSubmit } from "@/actions/admin/login/login";
-import Link from "next/link";
+// import Link from "next/link";
 import { redirect } from "next/navigation";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import { createClient } from "@/utils/supabase/server";
@@ -22,7 +22,7 @@ const AdminLoginSection = async () => {
     if (decodedToken.user_role === "admin") redirect("/admin/dashboard/users");
   }
     else return (
-    <section className="flex flex-col items-center justify-center w-[400px] h-[350px] bg-gray-100">
+    <section className="flex flex-col items-center justify-center font-primary w-[400px] h-[350px] bg-gray-100">
       <div className="flex flex-row items-center justify-start">
         <h1 className="text-3xl font-bold mb-4">Admin Login</h1>
       </div>
@@ -55,12 +55,12 @@ const AdminLoginSection = async () => {
           >
             {"Login"}
           </button>
-          <Link
+          {/* <Link
             href={"/admin/signup"}
             className="border-[#2E67DD] cursor-pointer text-center text-[#2E67DD] hover:text-white hover:border-none hover:bg-[#2E67DD] border rounded p-2 w-full mt-2"
           >
             Sign Up
-          </Link>
+          </Link> */}
           <button
             type="reset"
             className="border-[#2E67DD] cursor-pointer text-[#2E67DD] hover:text-white hover:border-none hover:bg-blue-500 border rounded p-2 w-full mt-2"

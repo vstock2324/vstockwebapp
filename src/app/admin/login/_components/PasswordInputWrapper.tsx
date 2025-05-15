@@ -13,7 +13,7 @@ const PasswordInputWrapper = () => {
         ref={passwordInputRef}
         type={show ? "text" : "password"}
         name="adminPass"
-        className=" focus:outline-none border border-gray-300 rounded p-2 mb-2 w-full"
+        className=" focus:outline-none  font-primary border border-gray-300 rounded p-2 mb-2 w-full"
         placeholder="Enter Password"
       />
       {show ? (

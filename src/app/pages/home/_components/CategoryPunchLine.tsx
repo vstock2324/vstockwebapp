@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 
 const CategoryPunchLine=()=> {
   return (
-      <div className="flex flex-col w-full  py-6 space-y-2 justify-center items-center">
+      <div className="flex flex-col w-full  py-6 space-y-2 justify-center items-center mb-[15px]">
               <h1 className="text-center font-poppins w-full text-[clamp(9px,9px_+_1.5vw,40px)]   font-semibold text-[#1E1E1E]   tracking-[0.0375rem] text-nowrap">
                 Unleash Your Creativity with V-Stocks!
               </h1>
