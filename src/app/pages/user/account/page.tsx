@@ -1,8 +1,8 @@
-import Account from "./_components/Account";
+import AccountContextWrapper from "./_components/AccountContextWrapper";
 import MainLayout from "./_components/MainLayout";
 
 export default  function  ProfileUserIdAccountPage(){
     return (<MainLayout>
-          <Account/>
+          <AccountContextWrapper/>
     </MainLayout>)
 }

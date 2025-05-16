@@ -51,7 +51,7 @@ export async function updateSession(request: NextRequest) {
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
       return NextResponse.redirect(url);
-    } else if (request.nextUrl.pathname.startsWith("/pages/projects")) {
+    } else if (request.nextUrl.pathname.startsWith("/pages/user") ) {
       const url = request.nextUrl.clone();
       url.pathname = "/pages/login";
       return NextResponse.redirect(url);

@@ -3,11 +3,11 @@ import Link from "next/link";
 import { memo } from "react";
 import { FaRegUser } from "react-icons/fa6";
 
-const AccountBtn = ({userId}:{userId:string| undefined}) => {
+const AccountBtn = () => {
   return (
     <Link
       className="w-full py-3 "
-      href={`/pages/users/${userId}`}
+      href={`/pages/user/account`}
     >
       <div className="flex flex-row items-center w-full justify-start">
         <FaRegUser size={14} />

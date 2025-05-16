@@ -23,7 +23,6 @@ const NavBarLoginButton2 = async () => {
       return (
         <li>
           <LoggedInUser
-           userId={user.id}
            emailId={user.email}
             name={user.user_metadata["full_name"] || null}
             picture_url={user.user_metadata["avatar_url"] || null}
@@ -34,7 +33,6 @@ const NavBarLoginButton2 = async () => {
       return (
         <li>
           <LoggedInUser
-            userId={user.id}
             emailId={user.email}
             name={"Admin"}
             picture_url={"/images/admin.png"}

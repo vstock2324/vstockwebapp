@@ -4,17 +4,18 @@ import React, { memo } from "react";
 import "@/app/globals.css";
 import Image from "next/image";
 import Link from "next/link";
+
+
 const RecommendedViews = () => {
-  
-  return (
+   return (
     <div className="bg-[#F1F4FB] font-primary">
       <div className="container mx-auto">
         <div className="py-8 px-10 md:px-25 max-w-[1440px]">
-          <h2 className="text-center md:text-start  text-[#001A5B] font-poppins600 font-medium  not-italic text-nowrap text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px]">
+          <h2 className="text-center md:text-start  text-[#001A5B]  font-medium  not-italic text-nowrap text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px]">
             Recommended to You
           </h2>
         </div>
-        <div className="flex flex-col m-1 p-1  justify-center items-center  px-8 md:flex-row md:space-x-8">
+        <div className="flex flex-col m-1 p-1  justify-center items-center pb-6  px-8 md:flex-row md:space-x-8">
           <div className="cursor-pointer m-1 p-1">
             
             <Link href={{pathname:"/"}}> 
@@ -32,7 +33,7 @@ const RecommendedViews = () => {
           </div>
           <div className=" m-1 p-1 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
             <div className="">
-              <Link href={{ pathname: "/" }}>
+              <Link href={"/" }>
                 <Image
                   width={264}
                   height={187.217}
@@ -43,7 +44,7 @@ const RecommendedViews = () => {
               </Link>
             </div>
             <div className="">
-              <Link href={{ pathname: "/" }}>
+              <Link href={"/" }>
                 <Image
                   width={264}
                   height={187.217}
@@ -54,7 +55,7 @@ const RecommendedViews = () => {
               </Link>
             </div>
             <div className="">
-              <Link href={{ pathname: "/" }}>
+              <Link href={"/" }>
                 <Image
                   width={264}
                   height={187.217}
@@ -65,7 +66,7 @@ const RecommendedViews = () => {
               </Link>
             </div>
             <div className="">
-              <Link href={{ pathname: "/" }}>
+              <Link href={"/" }>
                 <Image
                   width={264}
                   height={187.217}

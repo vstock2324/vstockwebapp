@@ -15,14 +15,13 @@ import LogoutBtn from "./LogoutBtn";
 import DownloadsBtn from "./DownloadsBtn";
 import ChangePlanBtn from "./ChangePlanBtn";
 import HelpCenterBtn from "./HelpCenterBtn";
+import ProjectsBtn from "./ProjectsBtn";
 
 const LoggedInUser = ({
-  userId,
   emailId,
   name,
   picture_url,
 }: {
-  userId:string;
   emailId:string | undefined;
   name: string;
   picture_url: string;
@@ -67,8 +66,9 @@ const LoggedInUser = ({
              </div>
               <ChangePlanBtn/>
              <DivSeparator/>
-              <AccountBtn userId={userId}/>
-              <DownloadsBtn userId={userId}/>
+              <AccountBtn/>
+              <ProjectsBtn />
+              <DownloadsBtn/>
               <PrivacyPolicyBtn/>
               <HelpCenterBtn/>
               <DivSeparator/>

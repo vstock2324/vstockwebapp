@@ -1,5 +1,5 @@
 import { permanentRedirect } from "next/navigation";
 
 export default function ProfilePage(){
-    permanentRedirect("/pages/projects");
+    permanentRedirect("/pages/user/projects?page=1");
 }

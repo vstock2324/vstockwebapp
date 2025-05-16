@@ -1,7 +1,7 @@
 import { memo } from "react";
-import NavBar2  from "../../home/_components/NavBar2";
-import NavBar1 from "../../home/_components/NavBar1";
-import NavBar0 from "../../home/_components/NavBar0";
+import NavBar2  from "../../../home/_components/NavBar2";
+import NavBar1 from "../../../home/_components/NavBar1";
+import NavBar0 from "../../../home/_components/NavBar0";
 
 const Header = () => {
   return (

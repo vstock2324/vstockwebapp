@@ -6,25 +6,25 @@ import { permanentRedirect } from "next/navigation";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function handleDeleteUser(
+export async function handleUserAccountDeletion(
   userId: string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   formData: FormData
 ): Promise<void> {
   try {
     const cookieStore = await cookies();
-    const supabase= await createClient();
+    const supabase = await createClient();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { error:userDeletedError } = await supabase
-.from('users')
-.delete()
-.eq('id', `${userId}`);
-if (userDeletedError) throw  new Error(userDeletedError.message);
-else{
-   await new Promise(resolve=>setTimeout(resolve,2000));
-   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-   const { data, error } = await adminAuthClient.deleteUser(userId);
-   if (error)  throw new Error(error.message);
+    const { error: userDeletedError } = await supabase
+      .from("users")
+      .delete()
+      .eq("id", `${userId}`);
+    if (userDeletedError) throw new Error(userDeletedError.message);
+    else {
+    //   await new Promise((resolve) => setTimeout(resolve, 2000));
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { data, error } = await adminAuthClient.deleteUser(userId);
+      if (error) throw new Error(error.message);
       else {
         // Delete all auth-related cookies
         cookieStore.getAll().forEach((cookie) => {
@@ -33,16 +33,11 @@ else{
           }
         });
       }
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
-   
- } catch (error) {
-   console.log(error);
-   throw error;
- }
- revalidateTag(userId);
- permanentRedirect("/admin/dashboard/users"); 
-  }
-
- 
-
-
+  revalidateTag(userId);
+  permanentRedirect("/pages/home");
+}

@@ -10,7 +10,7 @@ const CombineFilters = () => {
   const { openVectorFilter, setOpenVectorFilter } = useVectorFilter();
   return (
     <>
-      <div className=" hidden mx-[30px]  lg:mx-[120px] 2xl:mx-auto 2xl:max-w-[1440px] md:flex md:flex-row  items-center  justify-between relative py-8">
+      <div className=" hidden mx-[30px]  lg:mx-[120px] 2xl:mx-auto 2xl:max-w-[1440px] md:flex md:flex-row  items-center  justify-between relative py-6">
         <div className="inline-flex flex-row items-center justify-between">
           <span className="px-1 py-2 cursor-pointer">
             <BsSliders fill={"black"} size={20} />

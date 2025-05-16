@@ -13,7 +13,6 @@ const NavBarLoginButton0 = async () => {
     <li className="flex flex-row items-center justify-between gap-x-4 ">
       {user ? (
         <LoggedInUser
-        userId={user.id}
         emailId={user.email}
           name={user.user_metadata["full_name"] || null}
           picture_url={user.user_metadata["avatar_url"] || null}
