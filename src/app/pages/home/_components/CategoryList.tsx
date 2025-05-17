@@ -18,13 +18,13 @@ const CategoryList=()=> {
     handleCategoryName();
   }, []);
   return (
-        <div className="grid grid-cols-3 grid-flow-row-dense gap-y-2 w-full ml-2">
+        <div className="grid grid-cols-3 grid-flow-row-dense gap-0.5 w-full ml-2">
         {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           category.map((item: any) => {
             return (
               <Link
-                className="text-black  px-1.5 py-0.5 font-normal text-[12px] cursor-pointer hover:underline hover:font-bold hover:transition-all  duration-100"
+                className="text-black  px-1.5 py-0.5 font-normal text-[13px]  text-nowrap cursor-pointer hover:underline hover:font-bold hover:transition-all  duration-100"
                 key={item.id}
                 href={`/pages/home/vectors/category/${item.name}?page=1`}
               >

@@ -9,8 +9,8 @@ import TemplateDivSeperator from "./TemplateDivSeperator";
 const TemplatesList = () => {
   const {openTemplateMenu}=useTemplateMenu();
   return (
-    <div className="absolute z-20 w-[700px] h-[300px] bg-white top-[100%] -left-[200%] border  border-gray-300 rounded-[10px]">
-      <div className="grid grid-cols-[150px_1px_1fr] p-5">
+    <div className="absolute z-20 w-[600px] h-auto bg-white top-[100%] -left-[150%] border  border-gray-300 rounded-[10px]">
+      <div className="grid grid-cols-[130px_1px_1fr] p-5">
        <TemplatesMenu/>
        <TemplateDivSeperator/>
         {openTemplateMenu && <CategoryList/> }
