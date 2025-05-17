@@ -16,21 +16,22 @@ const RecommendedViews = () => {
           </h2>
         </div>
         <div className="flex flex-col m-1 p-1  justify-center items-center pb-6  px-8 md:flex-row md:space-x-8">
-          <div className="cursor-pointer m-1 p-1">
-            
+          
+{/*             
             <Link href={{pathname:"/"}}> 
             <img className="w-[264px] h-[188px] md:w-[557px] md:h-[395px] justify-self-center" src="/images/Navratri1.svg" alt=""/>
-            </Link>
-            {/* <Link href={{ pathname: "/" }}>
-              {" "}
+            </Link> */}
+            <Link className="" href={"/" }>
+            <div className="cursor-pointer flex flex-col items-center justify-center">
               <video
                 muted
                  autoPlay
-                className="w-[264px] h-[188px] rounded-md md:w-[557px] md:h-[395px] justify-self-center"
+                className="w-[264px] h-[188px]  md:w-[557px] md:h-[395px] justify-self-center bg-no-repeat rounded-[15px]"
                 src="https://uqmdwdzmfmvegzpietkc.supabase.co/storage/v1/object/public/vstock.bucket.1/admin_animations/animation-2.mp4"
               />
-            </Link> */}
-          </div>
+              </div>
+            </Link> 
+          
           <div className=" m-1 p-1 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
             <div className="">
               <Link href={"/" }>

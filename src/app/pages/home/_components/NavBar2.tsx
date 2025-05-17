@@ -6,10 +6,11 @@ import NavBarLoginButton2 from "./NavBarLoginButton2";
 import NavBar2ProjectsLinkContextWrapper from "./NavBar2ProjectsLinkContextWrapper";
 
 
+
 const NavBar2 = () => {
   return (
-    <div className=" hidden lg:flex lg:flex-row items-center justify-center w-full">
-      <nav className=" lg:flex lg:flex-row lg:items-center max-w-[1440px] lg:justify-center lg:w-full">
+    <div className=" hidden xl:flex xl:flex-row items-center justify-center w-full">
+      <nav className=" xl:flex xl:flex-row xl:items-center max-w-[1440px] xl:justify-center xl:w-full">
         <ul className="list-none text-[20px] text-white flex flex-row justify-between items-center w-full ">
           <li className="flex flex-col items-start justify-start pb-2">
             <Link href={"/pages/home"} prefetch={true}>

@@ -26,7 +26,7 @@ export default function AuthPage() {
           </Link>
         </div>
 
-        <div className="w-full flex items-center justify-center p-5 text-black border-b-gray-300">
+        <div className="w-full flex items-center justify-center font-primary p-5 text-black border-b-gray-300">
           Login / Register
         </div>
 

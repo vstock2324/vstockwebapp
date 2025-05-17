@@ -10,11 +10,11 @@ export default function HomePage() {
 
   return (
     <MainHomeLayout>
-      <div className="container mx-auto bg-[#FEFAFF]">
+      
         <Category />
         <div className="mt-[40px] " />
         <NewlyAdded />
-      </div>
+      
       <EditOwn/>
       <div className="mt-[45px]">
         <PromotionalViews/>

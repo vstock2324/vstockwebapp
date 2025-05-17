@@ -2,7 +2,7 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { FaChevronUp } from "react-icons/fa";
-import  TemplatesList from "./TemplatesList";
+import TemplatesListWrapper from "./TemplatesListWrapper";
 
 const TemplatesListItem =() => {
   const [open, setOpen] = useState<boolean>(false);
@@ -26,21 +26,21 @@ const TemplatesListItem =() => {
   },[])
 
   return (
-    <li ref={liRef} className="relative flex flex-row justify-between items-center space-x-2">
+    <li ref={liRef} className="relative flex flex-row justify-between items-center space-x-1.5">
       <span>Templates</span>
       {open ? (
         <FaChevronUp
-          className="cursor-pointer"
-          size={18}
+          className="mt-0.5 cursor-pointer"
+          size={14}
         />
       ) : (
         <FaChevronDown
-          className="cursor-pointer"
-          size={18}
+          className="mt-0.5 cursor-pointer"
+          size={14}
         />
       )}
       {open ? (
-      <TemplatesList/>
+      <TemplatesListWrapper/>
       ) : (
         <></>
       )}
